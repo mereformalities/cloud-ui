@@ -1,0 +1,65 @@
+/* Resets courtesy Gowalla, Twitter Bootstrap */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,
+big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
+figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	font-variant: normal;
+	vertical-align: baseline;
+	background: transparent; /* html 5 */
+}
+html {
+	background: white;
+  overflow-y: scroll;
+}
+body {
+	line-height: 1;
+	color: black;
+	background-color: transparent;
+}
+ol,ul { /* or nav ul */
+	list-style: none;
+}
+table {
+	/* use 'separate' to add borders to tr */
+	border-collapse: separate; /* collapse */
+	border-spacing: 0;
+	vertical-align: middle;
+}
+caption,th,td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle
+}
+q,blockquote {
+	quotes: "" "";
+}
+q:before,q:after,blockquote:before,blockquote:after {
+	content: "";
+}
+.ie7 img, .iem7 img {
+	-ms-interpolation-mode: bicubic;
+}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+	display: block;
+}
+address,caption,cite,code,dfn,th,var { /* em */
+	font-style: normal; 
+	font-weight: normal;
+}
+[hidden] { 
+	display: none; 
+}
+*:focus {
+	outline-color: -moz-use-text-color;
+	outline-style: none;
+	outline-width: 0;
+}

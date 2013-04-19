@@ -1,0 +1,17 @@
+/* Placement guides */
+
+@mixin selector-label($content) {
+	.guides #container:after {
+		content: $content;
+		position: fixed;
+		top: 0; right: 5px;  
+		font-family: helvetica;
+		font-weight: 100;
+		font-size: 64px;
+		line-height: 48px;
+		letter-spacing: -0.1em;
+		opacity: 0.2;
+		color: #ddd;
+		z-index: 1000; 
+	}
+}

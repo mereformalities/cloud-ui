@@ -1,0 +1,65 @@
+== Description of Contents
+
+The directory structure of the cloud-ui ruby gem:
+
+  |-- app
+  |   |-- assets_src
+  |   |   |-- images
+  |   |   |-- javascripts
+  |   |   |   |-- extensions
+  |   |   |   `-- widgets
+  |   |   |-- stylesheets
+  |   |   |   |-- functions
+  |   |   |   |-- utilities
+  |   |   |   `-- widgets
+  |   |   `-- templates
+  |   |-- controllers
+  |   |-- helpers
+  |   `-- views
+  |       `-- layouts
+  |-- demo
+  |   |-- images
+  |   |-- javascripts
+  |   `-- stylesheets
+  |-- lib
+  |   |-- clound-ui
+  |   `-- tasks
+  |-- test
+  |   |-- lib
+  |   `-- support
+  `-- vendor
+      `-- assets
+          |-- javascripts
+          |   |-- jquery
+          |   `-- native
+           `-- stylesheets
+
+app
+  Holds example rails code on which to run tests.
+
+app/assets_src
+  Contains images, stylesheets and javascript used in the tests.
+  
+app/assets_src/javascripts
+  Includes example backbone app code.
+
+app/assets_src/templates
+  Templates used to create widgets dynamically.
+
+boilerplate?
+  Contains minimal resources necessary to create a new site.
+
+demo
+  Contains a non-rails demo/documentation site non-minified versions of all assets.
+
+lib/cloud-ui
+  Contains the code uniquely distributed through this gem.
+  
+lib/tasks
+  Contains the rake tasks included with this gem.
+  
+test/lib
+  Contains the tests for features of this gem.
+  
+vendor
+  Contains third party code distributed through this gem.

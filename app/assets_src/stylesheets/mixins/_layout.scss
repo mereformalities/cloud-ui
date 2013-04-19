@@ -1,0 +1,145 @@
+
+// Dimensions
+@mixin dimensions($square, $height: -1px) {
+	width: $square;
+	@if $height < 0 { height: $square; }
+	@else { height: $height; }  
+}
+
+// Fill parent
+@mixin fill() {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+// Cover parent
+@mixin cover() {
+  display: block;
+  position: absolute; 
+  top: 0; 
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Cover the viewport
+@mixin cover-viewport() {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Corners
+@mixin corner-nw() { display: block; position: absolute; top: 0; left: 0; }
+@mixin corner-ne() { display: block; position: absolute; top: 0; right: 0; }
+@mixin corner-sw() { display: block; position: absolute; bottom: 0; left: 0;}
+@mixin corner-se() { display: block; position: absolute; bottom: 0; right: 0; }
+
+// Edges
+@mixin edge-top() { display: block; position: absolute; top: 0; left: 0; right: 0; }
+@mixin edge-right() { display: block; position: absolute; top: 0; bottom: 0; right: 0; }
+@mixin edge-bottom() { display: block; position: absolute; bottom: 0; left: 0; right: 0; }
+@mixin edge-left() { display: block; position: absolute; top: 0; left: 0; bottom: 0; }
+
+// Panels
+@mixin panel-top() { display: block; position: fixed; top: 0; left: 0; right: 0; }
+@mixin panel-right() { display: block; position: fixed; top: 0; bottom: 0; right: 0; }
+@mixin panel-bottom() { display: block; position: fixed; bottom: 0; left: 0; right: 0; }
+@mixin panel-left() { display: block; position: fixed; top: 0; left: 0; bottom: 0; }
+
+
+// Source: Bourbon Addons
+@mixin position ($position: relative, $coordinates: 0 0 0 0) {
+
+  @if type-of($position) == list {
+    $coordinates: $position;
+    $position: relative;
+  }
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  position: $position;
+
+  @if $top == auto {
+    top: $top;
+  }
+  @else if not(unitless($top)) {
+    top: $top;
+  }
+
+  @if $right == auto {
+    right: $right;
+  }
+  @else if not(unitless($right)) {
+    right: $right;
+  }
+
+  @if $bottom == auto {
+    bottom: $bottom;
+  }
+  @else if not(unitless($bottom)) {
+    bottom: $bottom;
+  }
+
+  @if $left == auto {
+    left: $left;
+  }
+  @else if not(unitless($left)) {
+    left: $left;
+  }
+}
+
+
+// Source: Bootstrap
+// Example: an element with height 30px, use forceVerticalAlign(30px) to calculate the appropriate top margin.
+@mixin forceVerticalAlign($containerHeight, $elementHeight) {
+  margin-top: ($containerHeight - $elementHeight) / 2;
+}
+
+@mixin navbarVerticalAlign($elementHeight) {
+  margin-top: ($navbarHeight - $elementHeight) / 2;
+}
+
+
+// Center-align a block level element
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Legacy support for inline-block in IE7 (maybe IE6)
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+}
+
+// IE7 inline-block
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+
+// Source: h5bp.com/q
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    display: table;
+    content: "";
+    line-height: 0; 	// Fixes Opera/contenteditable bug:
+  }										// http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+  &:after {
+    clear: both;
+  }
+}

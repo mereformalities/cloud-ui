@@ -1,0 +1,18 @@
+/* Responsive */
+
+$break-default: 320px !default;
+$break-medium: 980px !default;
+$break-desktop: 1224px !default;
+$break-wide: 1420px !default;
+
+// Usage: 
+// @media #{$device-default} ...
+$device-default:          "only screen and (max-width: #{$break-default})";
+$device-narrow:           "only screen and (max-width: 679px)";
+$device-phone-landscape:  "only screen and (max-device-width: 480px) and (orientation: landscape)";
+$device-tablet-portrait:  "only screen and (min-width: 680px) and (max-width: 1024px) and (orientation: portrait)";
+$device-tablet-landscape: "only screen and (min-width: 680px) and (max-width: 1024px) and (orientation: landscape)";
+$device-medium:           "only screen and (min-width: 680px) and (max-width: #{$break-medium - 1})";
+$device-medium-wide:      "only screen and (min-width: #{$break-medium}) and (max-width: #{$break-wide - 1})";
+$desktop-only:            "only screen and (min-width: #{$break-desktop})";
+$device-wide:             "only screen and (min-width: #{$break-wide})";

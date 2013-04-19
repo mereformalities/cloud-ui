@@ -1,0 +1,154 @@
+/* Widgets */
+
+// Border radius
+$defaultBorderRadius: 	  2px		!default;
+$tableBorderRadius:			  4px 	!default;
+$modalBorderRadius:			  6px		!default;
+
+
+// Input placeholder text color
+$placeholderTextColor:    #bbb !default;
+
+
+// Scrollbars
+$scrollbarSize:           9px   !default;
+$scrollbarBorderRadius:   0px 	!default;
+
+
+// Buttons
+$btnBorderRadius:				  2px	!default;
+$btnTransition:           0.2s linear !default;
+$btnShadow:						    0 1px 2px rgba(0,0,0,.05) !default;
+$btnInsetShadow: 			    inset 0 1px 3px rgba(0,0,0,.11) !default;
+$btnTextShadow:           rgba(255, 255, 255, 0.698039) 0px 1px 0px !default;    
+
+
+// Progress bars
+$progressBorderRadius:    2px !default;
+$progressBackground:      #eee !default;
+$progressForeground:      #149bdf !default;
+$progressSuccess:         #62c462 !default;
+$progressWarning:         lighten($orange, 15%) !default;
+$progressTransition:      width .5s ease;
+
+
+// Close button
+$closeWeight:             500 !default;
+
+
+// Alerts
+$alertBorderRadius:       1px !default;
+
+
+// Carets
+$caretSize:               3px !default;
+
+
+// Modals
+$modalBackdropBackground: $black !default;
+$modalBackdropOpacity:    0.8 !default;
+$modalTransition:         #{opacity .3s linear, top .3s ease-out} !default;
+
+
+// Form inputs
+$inputStateTransition:    #{border linear .05s, box-shadow linear .05s} !default;
+
+
+// Form alignment
+$inputVerticalPad:        0.2857em !default;
+$inputHorizontalPad:			6px !default;
+
+
+// Hr border color
+$hrBorder:                $grayLighter !default;
+
+
+// Wells
+$wellBackground:          #f5f5f5 !default;
+
+
+// Navbar
+$navbarCollapseWidth:             979px !default;
+
+$navbarHeight:                    40px !default;
+$navbarBackgroundHighlight:       #ffffff !default;
+$navbarBackground:                #ffffff !default; // darken($navbarBackgroundHighlight, 5%)
+$navbarBorder:                    #e7e7e7 !default; // darken($navbarBackground, 12%)
+
+$navbarText:                      $gray !default;
+$navbarLinkColor:                 $gray !default;
+$navbarLinkColorHover:            $grayDark !default;
+$navbarLinkColorActive:           $grayDark !default;
+$navbarLinkBackgroundHover:       transparent !default;
+$navbarLinkBackgroundActive:      darken($navbarBackground, 5.25%) !default;
+
+$navbarBrandColor:                $navbarLinkColor !default;
+
+// Inverted navbarn
+$navbarInverseBackground:                #111111 !default;
+$navbarInverseBackgroundHighlight:       #222222 !default;
+$navbarInverseBorder:                    #252525 !default;
+
+$navbarInverseText:                      $grayLight !default;
+$navbarInverseLinkColor:                 $grayLight !default;
+$navbarInverseLinkColorHover:            $white !default;
+$navbarInverseLinkColorActive:           $navbarInverseLinkColorHover !default;
+$navbarInverseLinkBackgroundHover:       transparent !default;
+$navbarInverseLinkBackgroundActive:      $navbarInverseBackground !default;
+
+$navbarInverseSearchBackground:          lighten($navbarInverseBackground, 25%) !default;
+$navbarInverseSearchBackgroundFocus:     $white !default;
+$navbarInverseSearchBorder:              $navbarInverseBackground !default;
+$navbarInverseSearchPlaceholderColor:    #ccc !default;
+
+$navbarInverseBrandColor:                $navbarInverseLinkColor !default;
+
+
+// Pagination
+// -------------------------
+$paginationBackground:                #fff !default;
+$paginationBorder:                    #ddd !default;
+$paginationActiveBackground:          #f5f5f5 !default;
+
+
+// Hero unit
+// -------------------------
+$heroUnitBackground:              $grayLighter !default;
+$heroUnitHeadingColor:            inherit !default;
+$heroUnitLeadColor:               inherit !default;
+
+
+// Form states and alerts
+// -------------------------
+$warningText:             #bb9650 !default;
+$warningBackground:       #fcf8e3 !default;
+$warningBorder:           darken(adjust-hue($warningBackground, -9), 15%) !default;
+
+$errorText:               #b94a48 !default;
+$errorBackground:         #f2dede !default;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+
+$successText:             #468847 !default;
+$successBackground:       #dff0d8 !default;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+
+$infoText:                #3a87ad !default;
+$infoBackground:          #d9edf7 !default;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
+
+
+// Tooltips and popovers
+// -------------------------
+$tooltipColor:            #fff !default;
+$tooltipBackground:       #000 !default;
+$tooltipArrowWidth:       5px !default;
+$tooltipArrowColor:       $tooltipBackground !default;
+
+$popoverBackground:       #fff !default;
+$popoverArrowWidth:       10px !default;
+$popoverArrowColor:       #fff !default;
+$popoverTitleBackground:  darken($popoverBackground, 3%) !default;
+
+// Special enhancement for popovers
+$popoverArrowOuterWidth:  $popoverArrowWidth + 1 !default;
+$popoverArrowOuterColor:  rgba(0,0,0,.25) !default;

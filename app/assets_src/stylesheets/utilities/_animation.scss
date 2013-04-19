@@ -1,0 +1,48 @@
+//
+// Component animations
+// --------------------------------------------------
+
+@mixin fade($transition: $fadeTransition) {
+  @include opacity(0);
+  @include gpu-transition($transition);
+  &.in {
+    @include opacity(1);
+  }
+}
+
+@mixin fadeable($transition: $fadeTransition) {
+  @include opacity(1);
+  @include gpu-transition($transition);
+  &.out {
+    @include opacity(0);
+  }
+}
+
+.fade {
+  @include fade($fadeTransition);
+  &.quick {
+    @include fade($quickFadeTransition);
+  }
+}
+
+.fadeable {
+  @include fadeable($fadeTransition);
+  &.quick {
+     @include fadeable($quickFadeTransition);
+  }
+}
+
+.collapse {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  overflow: visible \9;
+  @include gpu-transition($collapseTransition);
+  &.in, &.open {
+    height: auto;
+  }
+}
+
+.no-transition {
+	@include transition-property(none);
+}

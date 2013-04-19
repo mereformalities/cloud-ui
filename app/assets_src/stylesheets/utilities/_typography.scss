@@ -1,0 +1,288 @@
+/* Typography */
+
+html {
+  font-size: $baseFontSize; // 62.5%
+  line-height: $baseLineHeight;
+  font-family: $baseFontFamily;
+  background-color: $pageBackground;
+  overflow-y: scroll;
+  min-height: 100%;
+}
+
+body {
+  background-color: transparent;
+  color: $textColor;
+}
+
+header, footer {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 $baseHeight;
+	// http://www.w3.org/TR/css3-text/#hyphenation
+	-webkit-hyphens: auto;
+	-webkit-hyphenate-character: "\2010";
+	-webkit-hyphenate-limit-after: 1;
+	-webkit-hyphenate-limit-before: 3;
+	-moz-hyphens: auto;
+	img { margin: 0; }
+	&.lead {
+	  margin-bottom: $baseHeight;
+	  font-size: $baseFontSize * 2;	  
+	  line-height: $baseHeight * 2;
+	  font-weight: $mediumWeight;
+	}
+}
+
+b, strong {
+  font-weight: $boldWeight;
+}
+em {
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+}
+ins { 
+	text-decoration: none; 
+}
+del { 
+	text-decoration: line-through;
+}
+.muted {
+  color: $grayLight;
+}
+small {
+  font-size: 87.5%; // 80%
+}
+.small-print {
+	font-family: $miniFontFamily;
+	font-size: $miniFontSize;
+	line-height: $miniLineHeight;
+	color: $smallPrintColor;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 $baseHeight;
+  font-family: $headingsFontFamily;
+  font-weight: $headingsFontWeight;
+  //line-height: 1;
+  color: $headingColor;
+  text-rendering: optimizelegibility;
+	a { font-weight: inherit; }
+  small {
+    letter-spacing: 0;
+    font-weight: normal;
+    line-height: 1;
+    color: $grayLight;
+  }
+}
+
+// TODO: Function to generate headers using $headingsScaleFactor
+// TODO: small font-size should use a percentage measure
+h1, .h1 { @include heading(44px); } // 45 / 14 = 3.21
+h2, .h2 { @include heading(32px); } // 32 / 14 = 2.26
+h3, .h3 { @include heading(25px); } // 26 / 14 = 1.86
+h4, .h4 { @include heading(19px); } // 20 / 14 = 1.43
+h5, .h5 { @include heading(16px); } // 16 / 14 = 1.14
+h6, .h6 { @include heading(14px); } // 14 / 14 = 1.00
+
+h1 small { @include font-size(24px); font-weight: $mediumWeight; }
+h2 small { @include font-size(18px); font-weight: $mediumWeight; }
+h3 small { @include font-size(14px); }
+h4 small { @include font-size(13px); }
+
+.nokern {
+  letter-spacing: 0;
+}
+
+
+/* Elements */
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 ($baseHeight / 2) 25px;
+}
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: $baseHeight;
+}
+ul.unstyled, ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+dl {
+  margin-bottom: $baseHeight;
+}
+dt, dd {
+  line-height: $baseHeight;
+}
+dt {
+  font-weight: $boldWeight;
+}
+dd {
+  margin-left: $baseHeight / 2;
+}
+// Horizontal layout (like forms)
+.dl-horizontal {
+  dt {
+    float: left;
+    width: 120px;
+    clear: left;
+    text-align: right;
+    @include text-overflow();
+  }
+  dd {
+    margin-left: 130px;
+  }
+}
+
+// Rule
+hr {
+  margin: $baseHeight 0;
+  border: 0;
+  border-top: 1px solid $hrBorder;
+}
+
+// Figure
+figure {
+  margin-bottom: 1.5em;
+  img {
+    margin-bottom: .375em;
+  }
+  figcaption {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: gray;
+  }
+}
+
+// Abbreviations and acronyms
+abbr[title] {
+  border-bottom: 1px dotted $grayLight;
+  cursor: help;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+blockquote {
+  padding: 0 0 0 15px;
+	// padding: 9px 20px 0 19px; 
+  margin: 0 0 $baseHeight;
+  border-left: 4px solid $grayLighter;
+  p {
+    margin-bottom: 0;
+    @include font-shorthand(16px, 300, $baseHeight * 1.25); 
+		font-style: italic;
+		color: #777;
+  }
+  small {
+    display: block;
+    line-height: $baseHeight;
+    color: $grayLight;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+	cite { 
+		display: block; 
+		font-size: 12px; 
+		color: #555;
+		&:before { content: "\2014 \0020"; }
+	}
+
+  // Float right with text-align: right
+  &.pull-right {
+    float: right;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid $grayLighter;
+    border-left: 0;
+    p, small {
+      text-align: right;
+    }
+    small {
+      &:before {
+        content: '';
+      }
+      &:after {
+        content: '\00A0 \2014';
+      }
+    }
+  }
+}
+
+// Quotes
+blockquote, q {
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+q {
+  quotes: none;
+}
+
+pre {
+  font-family: $monoFontFamily;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+mark {
+  background-color: #ffff99;
+  color: #fff;
+  font-style: italic;
+  font-weight: $boldWeight;
+}
+// Addresses
+address {
+  display: block;
+  margin-bottom: $baseHeight;
+  font-style: normal;
+  line-height: $baseHeight;
+}
+// Pipe delimiters
+.pipe {
+  padding: 0 0.25em;
+}
+
+
+
+/* Links */
+
+a {
+  color: $linkColor;
+  text-decoration: $primaryLinkDecoration;
+  @if ($primaryLinkTransition != none) {
+    @include transition($primaryLinkTransition);
+  }
+  &:hover {
+    color: $linkColorHover;
+    text-decoration: $primaryHoverDecoration;
+    cursor: pointer;
+  }
+  &:active {
+    color: $linkColorActive;
+    text-decoration: $primaryHoverDecoration;
+    cursor: pointer;
+  }
+}
+/*a { 
+	color: $primary-link-color;
+	text-decoration: $primary-link-decoration;
+	&:hover { color: $primary-link-hover; }
+	&:active { color: $primary-link-active; }
+}*/

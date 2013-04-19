@@ -1,0 +1,15 @@
+/* User Selection */
+
+@if $useSelectionColors {
+  .user-selection {
+  	background: $selectionBackground; 
+  	//color: $selectionForeground; 
+  	text-shadow: none;	
+  }
+
+  ::-webkit-selection,
+  ::-moz-selection,
+  ::selection { 
+  	@extend .user-selection;
+  }
+}

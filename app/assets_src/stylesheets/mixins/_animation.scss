@@ -1,0 +1,31 @@
+/* Animation Mixins */
+
+// Source: http://www.html5rocks.com/en/tutorials/speed/html5/
+//@mixin gpu-acceleration() {
+//  // -webkit-transform: translateZ(0);
+//  @include transform(translate3d(0,0,0));
+//}
+
+@mixin gpu-transition($transition) {
+  //transform: translate3d(0,0,0);
+  //-webkit-transform: translateZ(0);
+  // http://blog.alexmaccaw.com/css-transitions
+  -webkit-perspective: 1000;
+  @include transition($transition);
+}
+
+@mixin translate-left($amount) {
+  @include translate3d(0 - $amount, 0, 0);
+}
+
+@mixin translate-right($amount) {
+  @include translate3d($amount, 0, 0);
+}
+
+@mixin translate-up($amount) {
+  @include translate3d(0, 0 - $amount, 0);
+}
+
+@mixin translate-down($amount) {
+  @include translate3d(0, $amount, 0);
+}

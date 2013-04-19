@@ -1,0 +1,40 @@
+/* Layout Classes */
+
+.arr { font-size: 0.9em; line-height: 1.2em; vertical-align: top; }
+.clear { clear: both!important; float: none!important; }
+
+.cover 		 { @include cover; }
+.corner-nw { @include corner-nw; }
+.corner-ne { @include corner-ne; }
+.corner-sw { @include corner-sw; }
+.corner-se { @include corner-se; }
+
+.panel-top { @include panel-top; }
+.panel-right { @include panel-right }
+.panel-bottom { @include panel-bottom }
+.panel-left { @include panel-left }
+
+.handle { cursor: pointer; }
+.handle:active { cursor: move; }
+
+.no-size {
+	position: absolute; 
+	border: 0 none; 
+	height: 0; 
+	width: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+} 
+
+// Bootstrap - Container (centered, fixed-width layouts)
+.container {
+  @include container-fixed();
+}
+
+// Bootstrap - Fluid layouts (left aligned, with sidebar, min- & max-width content)
+.container-fluid {
+  padding-right: $gridGutterWidth;
+  padding-left: $gridGutterWidth;
+  @include clearfix();
+}

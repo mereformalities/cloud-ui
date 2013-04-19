@@ -1,0 +1,59 @@
+/* Manual overrides -- Load these last! */
+
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+/*
+ * Positioning
+ */
+.stick-left { position: absolute; left: 0; }
+.stick-right { position: absolute; right: 0; }
+.pull-left { float: left; }
+.pull-right { float: right; }      
+.left-align { text-align: left; }
+.center-align { text-align: center; }
+.right-align { text-align: right; }
+/*
+ * Cursors
+ */ 
+.pointer { cursor: pointer; }
+.movable { cursor: move; }
+.hand { cursor: hand; }
+.crosshair { cursor: crosshair; }
+.not-allowed { cursor: not-allowed; }
+/*
+ * Required elements are hidden from view but only in the
+ * case that the user is without javascript support.
+ */
+.require, .require-inline { display: none; }
+.no-js .require { display: block; }
+.no-js .require-inline { display: inline-block; }
+/*
+ * Hidden elements are secondary and should not be
+ * displayed to users missing javscript support.
+ */
+.hide, .hidden { display: none; }
+.invisible { visibility: hidden; }
+.transparent { @include opacity(0); }
+.opaque { @include opacity(1); }
+.visible { visibility: visible; }
+.show-inline { display: inline-block; }
+.show { display: block; }
+/*
+ * Plugins
+ */
+.affix {
+  position: fixed;
+}
+/*
+ * Utilities
+ */
+.clearfix {
+  @include clearfix();
+}
+.hide-text {
+  @include hide-text();
+}
+.input-block-level {
+  @include input-block-level();
+}

@@ -1,0 +1,49 @@
+/* Typography */
+
+// Families
+$helveticaFamily:       Helvetica, Arial, sans-serif 								          !default;
+$helveticaNeueFamily:   OpenSansRegular, "Helvetica Neue", Helvetica, sans-serif !default;
+$georgiaFamily:         Georgia, Palatino, "Times New Roman", Times, serif 		!default;
+$consolasFamily:        Consolas, "Liberation Mono", Courier, monospace       !default;
+$andaleMonoFamily:      "Andale Mono", "Liberation Mono", Courier, monospace  !default;
+
+// Generics
+$sansFontFamily:        $helveticaNeueFamily 		  !default;
+$serifFontFamily:       $georgiaFamily            !default;
+$monoFontFamily: 				$consolasFamily           !default;
+$miniFontFamily: 				$helveticaNeueFamily      !default;
+
+// Font
+$baseFontFamily:        $sansFontFamily !default;
+
+// Weights
+$boldWeight:            700 !default;
+$mediumWeight:          400 !default;
+
+// Rhythm
+$baseFontSize:          13px !default; /* 16px */
+$baseLineHeight:        1.5 !default; /* 1.42857 */
+$baseHeight:            round($baseLineHeight * $baseFontSize);
+
+// Small print
+$miniFontSize: 					11px !default;
+$miniLineHeight: 				18px !default;
+
+// Headings
+$headingsFontFamily:    inherit !default;   // Empty to use BS default, $baseFontFamily
+$headingsFontWeight:    normal !default;    // Instead of browser default 'bold'
+$headingsScaleFactor:   1.618 !default;
+
+// Links
+$primaryLinkDecoration: 	none    			!default;
+$primaryHoverDecoration: 	underline			!default;
+$primaryLinkTransition:   color .075s   !default;
+
+// Footer
+$footerLinkDecoration:    none          !default;
+$footerHoverDecoration: 	underline			!default;
+$footerLinkTransition:    color .075s   !default;
+
+// Live-import:
+// $family: unquote("Droid+Sans");
+// @import url("http://fonts.googleapis.com/css?family=\#{$family}");

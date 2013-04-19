@@ -1,0 +1,7 @@
+// Source: Bootstrap
+
+@mixin opacity($percent) {             
+  -moz-opacity: $percent;
+        filter: alpha(opacity=round($percent * 100));
+	     opacity: $percent;
+}

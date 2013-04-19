@@ -1,0 +1,128 @@
+// Source: Bootstrap Grid System
+
+
+// Table columns
+@mixin tableColumns($columnSpan: 1) {
+  float: none; // undo default grid column styles
+  width: (($gridColumnWidth) * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
+  margin-left: 0; // undo default grid column styles
+}
+
+// Make a Grid
+// Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
+@mixin makeRow() {
+  margin-left: $gridGutterWidth * -1;
+  @include clearfix();
+}
+@mixin makeColumn($columns: 1, $offset: 0) {
+  float: left;
+  margin-left: ($gridColumnWidth * $offset) + ($gridGutterWidth * ($offset - 1)) + ($gridGutterWidth * 2);
+  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+}
+
+// Centered container element
+@mixin container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  @include clearfix();
+}
+
+
+// The Grid
+@mixin grid-core($gridColumnWidth, $gridGutterWidth) {
+  .row {
+    margin-left: $gridGutterWidth * -1;
+    @include clearfix();
+  }
+
+  [class*="span"] {
+    float: left;
+    margin-left: $gridGutterWidth;
+  }
+
+  // Set the container width, and override it for fixed navbars in media queries
+  .container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth);
+  }
+
+  // generate .spanX and .offsetX
+  @include grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
+  @include grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth);
+}
+
+@mixin grid-core-span-x($gridColumns, $gridColumnWidth, $gridGutterWidth) {
+  @while $gridColumns > 0 {
+    .span#{$gridColumns} { @include grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth)}
+    $gridColumns: $gridColumns - 1;
+  }
+}
+
+@mixin grid-core-offset-x($gridColumns, $gridColumnWidth, $gridGutterWidth) {
+  @while $gridColumns > 0 {
+    .offset#{$gridColumns} { @include grid-core-offset($gridColumns, $gridColumnWidth, $gridGutterWidth); }
+    $gridColumns: $gridColumns - 1;
+  }
+}
+
+@mixin grid-core-span($columns, $gridColumnWidth, $gridGutterWidth) {
+  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
+}
+
+@mixin grid-core-offset($columns, $gridColumnWidth, $gridGutterWidth) {
+  margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns + 1));
+}
+
+
+
+@mixin grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth) {
+  .row-fluid {
+    width: 100%;
+    @include clearfix();
+    [class*="span"] {
+      @include input-block-level();
+      float: left;
+      margin-left: $fluidGridGutterWidth;
+      *margin-left: $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+    }
+    [class*="span"]:first-child {
+      margin-left: 0;
+    }
+
+    // generate .spanX and .offsetX
+    @include grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+    @include grid-fluid-offset-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+  }
+}
+
+@mixin grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
+  @while $gridColumns > 0 {
+    .span#{$gridColumns} { @include grid-fluid-span($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+    $gridColumns: $gridColumns - 1;
+  }
+}
+
+@mixin grid-fluid-offset-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
+  @while $gridColumns > 0 {
+    .offset#{$gridColumns} { @include grid-fluid-offset($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+    .offset#{$gridColumns}:first-child { @include grid-fluid-offset-first-child($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+    $gridColumns: $gridColumns - 1;
+  }
+}
+
+@mixin grid-fluid-span($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
+  width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
+  *width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%);
+}
+
+@mixin grid-fluid-offset($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
+  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth * 2);
+  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + ($fluidGridGutterWidth * 2) - (.5 / $gridRowWidth * 100px * 1%);
+}
+
+@mixin grid-fluid-offset-first-child($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
+  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth);
+  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+}

@@ -1,0 +1,13 @@
+/* Utility functions */
+
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function baseHeights($number) {
+  @return round($number * $baseHeight);
+}
+
+@function baseHeightEms($number) {
+  @return $number * $baseLineHeight * 1em;
+}

@@ -1,0 +1,8 @@
+/*
+ * This file is used internally for testing.  When importing from another Sass file (including 
+ * from another project), the _cloud-ui.scss file will be referenced instead of this one.
+ * 
+ *= require_self
+*/
+@import "cloud-ui";
+@import "cloud-bookend";

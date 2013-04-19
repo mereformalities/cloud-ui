@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cloud UI</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Cloud UI Style Guide">
+        <meta name="author" content="Cloud UI">
+        
+        <link href="assets/cloud-default.css" rel="stylesheet">
+        <link href="assets/cloud-responsive.css" rel="stylesheet">
+        <link href="assets/prettify/prettify.css" rel="stylesheet">
+        
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <link rel="shortcut icon" href="assets/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    </head>
+
+<body>
+  <h1>Keyboard Shortcuts</h1>
+
+  <input type="text" placeholder="a text input"/>
+  <select><option></option><option>select</option></select>
+  <textarea placeholder="a textarea"></textarea>
+
+  <ol>
+    <li>Press 'c'. Nothing should be logged on console.</li>
+    <li>Press 'o' or Enter or Cursor &larr;. Console should log function call.</li>
+    <li>Press 'i'. Switches scope to 'issues'.</li>
+    <li>Press 'c'. Console should log function call.</li>
+    <li>Press 'o' or Enter or Cursor &larr;. Console should log function call.</li>
+  </ol>
+
+  <p>At any time, try pressing ⌘+right, shift+left or ctrl+shift+alt+d.</p>
+  <p>When a input, a select or a textarea element is focused, key inputs should be ignored.</p>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>Adapted from <a href="http://twitter.github.com/bootstrap" target="_blank">Twitter Bootstrap</a>. Remixed by <a href="http://twitter.com/mdo" target="_blank">@mereformalities</a>.
+      <br>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+      <br>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!--script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script-->
+  <script src="assets/prettify/prettify.js"></script>
+  <script src="assets/cloud-vendor.js"></script>
+  <script src="assets/cloud-ui.js"></script>
+  <script src="assets/application.js"></script>
+
+  <script>
+    key('c', 'issues', function () {
+     console.log('c/issues');
+    });
+
+    key('command+r, ctrl+r', 'issues', function () {
+      console.log('Hijacked Command+R or Ctrl+R, damn!');
+      return false;
+    });
+    
+    key('i', function () {
+      key.setScope('issues');
+      console.log('Switched to "issues" scope. Command+R or Ctrl+R is now no longer reloading...');
+    });
+    
+    key('i', function () {
+      console.log('(example of multiple assignment)');
+    });
+
+    key('o, enter, left', function () {
+      console.log('o, enter or left pressed!');
+    });
+
+    key('ctrl+c', function () {
+      console.log('this is not the command line');
+    });
+
+    key('⌘+right,shift+left,ctrl+shift+alt+d', function (event) {
+      console.log('command+right, or shift+left, or ctrl+shift+alt+d');
+      console.log('here is the event: ', event);
+      console.log('key.control', key.control);
+      console.log('key.ctrl', key.ctrl);
+      console.log('key.shift', key.shift);
+      console.log('key.alt', key.alt);
+      console.log('key["⌘"]', key["⌘"]);
+      return false; // prevent default && stop propagation
+    });
+  </script>
+</body>
+</html>

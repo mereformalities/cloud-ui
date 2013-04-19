@@ -1,0 +1,127 @@
+/* Colors */
+
+
+// Grays
+// -------------------------
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #ebebeb !default; // eee on white
+$grayBlue: 							#899499 !default;
+$white:                 #fff !default;
+
+
+// Accent colors
+// -------------------------
+$blue:                  #0090d6 !default;
+$blueDark:              #008cd2 !default;
+$green:                 #46a546 !default;
+$red:                   #9d261d !default;
+$yellow:                #ffc40d !default;
+$orange:                #f89406 !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+
+$primaryAccent: 				$blue !default;
+$secondaryAccent: 			$purple !default;
+
+
+// Base
+$pageBackground:        #f6f6f6 !default;
+$textColor:             #444 !default;
+$headingColor:          $grayDarker !default;
+$footerColor:           $grayDark !default;
+
+
+// Links
+$linkColor:             $primaryAccent !default;
+$linkColorHover:        darken($linkColor, 0%) !default;
+$linkColorActive:       $linkColorHover !default;
+
+// Footer
+$footerLinkColor:       $footerColor !default;
+$footerLinkColorHover:  darken($linkColor, 0%) !default;
+$footerLinkColorActive: $footerLinkColorHover !default;
+
+
+// Other
+$smallPrintColor: 			#999 !default;
+
+
+// Tables
+// -------------------------
+$tableBackground:                   transparent !default; // overall background-color
+$tableBackgroundAccent:             #f9f9f9 !default; // for striping
+$tableBackgroundHover:              #f5f5f5 !default; // for hover
+$tableBorder:                       #ddd !default; // table and cell border
+
+
+// Buttons
+// -------------------------
+$btnBackground:                     #fefefe !default; // fallback: f8f8f8
+$btnBackgroundHighlight:            #f3f3f3 !default; // f3f3f3
+$btnBorder:                         #d1d1d1 !default; // cecece, cfcfcf on white?
+$btnForeground:                     #838383 !default; // 6c6c6c
+$btnForegroundHighlight:            #555555 !default;
+
+$btnPrimaryBackground:              $linkColor !default;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 6%) !default;
+$btnPrimaryBorder:                  $btnPrimaryBackground !default;
+$btnPrimaryForeground:              #fff !default;
+$btnPrimaryForegroundHighlight:     #fff !default;
+
+/*$btnInfoBackground:               #5bc0de !default;
+$btnInfoBackgroundHighlight:        #2f96b4 !default;
+
+$btnInverseBackground:              #444 !default;
+$btnInverseBackgroundHighlight:     $grayDarker !default;
+
+$btnSuccessBackground:              #62c462 !default;
+$btnSuccessBackgroundHighlight:     #51a351 !default;
+
+$btnWarningBackground:              lighten($orange, 15%) !default;
+$btnWarningBackgroundHighlight:     $orange !default;*/
+
+$btnDangerBackground:               #ee5f5b !default;
+$btnDangerBackgroundHighlight:      #bd362f !default;
+$btnPrimaryBorder:                  $btnDangerBackground !default;
+$btnPrimaryForeground:              #fff !default;
+$btnPrimaryForegroundHighlight:     #fff !default;
+
+
+// Forms
+// -------------------------
+$inputBackground:               $white !default;
+$inputBorder:                   #ccc !default;
+$inputBorderRadius:             1px !default;
+$inputDisabledBackground:       $grayLighter !default;
+$formActionsBackground:         #f5f5f5 !default;
+
+// Dropdowns
+// -------------------------
+$dropdownBackground:            $white !default;
+$dropdownBorder:                rgba(0,0,0,0.2) !default;
+$dropdownDividerTop:            #e5e5e5 !default;
+$dropdownDividerBottom:         $white !default;
+
+$dropdownLinkColor:             $grayDark !default;
+
+$dropdownLinkColorActive:       $dropdownLinkColor !default;
+$dropdownLinkBackgroundActive:  $linkColor !default;
+
+$dropdownLinkColorHover:        $white !default;
+$dropdownLinkBackgroundHover:   $dropdownLinkBackgroundActive !default;
+
+
+// Scrollbars
+$scrollbarTrackColor: 			#fff 						  !default;
+$scrollbarThumbColor: 			#ccc						  !default;
+$scrollbarShadowColor: 			rgba(#333,0.2)    !default;
+$scrollbarInactiveColor: 		#eee  					  !default;
+
+// Text Selection
+$selectionBackground:				rgba(#4184c4,0.3) !default;
+$selectionForeground:				#666						  !default;
+

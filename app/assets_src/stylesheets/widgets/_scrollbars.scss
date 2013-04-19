@@ -1,0 +1,40 @@
+/* Scrollbars */
+
+@if ($useScrollbarColors) {
+  /* 
+   * Webkit 
+   */
+  div {	
+  	::-webkit-scrollbar {
+  		@include dimensions($scrollbarSize);
+  	}
+
+  	::-webkit-scrollbar-track {
+  		border-radius: $scrollbarBorderRadius;
+  		background-color: $scrollbarTrackColor;
+  		@include box-shadow(inset 0 0 6px $scrollbarShadowColor);
+  	}
+
+  	::-webkit-scrollbar-thumb {
+  		border-radius: $scrollbarBorderRadius;
+  		background-color: $scrollbarThumbColor;
+  	}
+
+  	::-webkit-scrollbar-thumb:window-inactive {
+  		background-color: $scrollbarInactiveColor; 
+  	}
+
+  	::-webkit-scrollbar-button {
+  		@include dimensions(0);
+  		display: none;
+  	}
+
+  	::-webkit-scrollbar-corner {
+  		background-color: transparent;
+  	}
+  }
+}
+
+.scroll {
+	overflow-y: scroll;
+}

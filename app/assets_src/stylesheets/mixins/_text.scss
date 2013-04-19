@@ -1,0 +1,178 @@
+// Helvetica Neue
+// spacing: -1 @ 28px, -2 @ 38
+//
+// Helvetica
+// spacing: -1 @ 23px, -2 @ 34
+//
+// textTreatment(bgColor, color, family, size)
+//
+// Good for headers: "proxima-nova-1", "proxima-nova-2", Helvetica, sans-serif
+// Good for text: color:#555 size:13px line-height:1.6em family:Helvetica Neue margin:16px
+// Good for title: color:#333 size:16px 
+
+// Assumes the technique described here:
+// http://snook.ca/archives/html_and_css/font-size-with-rem
+@mixin font-size($size) {
+  @if (unit($size) == px) {
+    $size: $size / 1px; // Remove units
+    font-size: ($size) + px;
+    @if ($useRemUnits) {
+      font-size: ($size / 10) + rem;
+    }
+    @if ($size > 21) {
+      letter-spacing: (0 - floor($size / 22)) + px; // Adjust kern
+    }
+  } 
+  @else {
+    font-size: $size;
+    letter-spacing: 0;
+  }
+}
+
+// Calculate vertical rhythm for headings
+@mixin heading($size) {
+  @include font-size($size);
+  $goal: ceil($size) * $baseLineHeight; // unitless
+  @if (unit($size) == px) {
+    $goal: ceil($size / $baseHeight) * $baseHeight; // px
+  }
+  @else if (unit($size) == em) {
+    $goal: ceil($size) * $baseLineHeight; // em
+  }
+  line-height: ($goal / $size); // unitless
+}
+
+@mixin h1($size) { h1 { @include heading($size); } }
+@mixin h2($size) { h2 { @include heading($size); } }
+@mixin h3($size) { h3 { @include heading($size); } }
+@mixin h4($size) { h4 { @include heading($size); } }
+@mixin h5($size) { h5 { @include heading($size); } }
+@mixin h6($size) { h6 { @include heading($size); } }
+
+@mixin base-font() {
+	font-size: $baseFontSize;
+	font-weight: normal;
+	text-decoration: none;
+	letter-spacing: normal;	
+}
+
+@mixin antialias() {
+  @if ($allowTextSmoothing) {
+    -webkit-font-smoothing: antialiased;
+  	text-rendering: optimizeLegibility;
+  	// http://sam.brown.tc/entry/367/follow-up-safari-s-text-shadow-anti-aliasing-css-hack
+  	// text-shadow: rgba(0,0,0,0.01) 0 0 1px;
+  }
+}
+@mixin subpixel() {
+  @if ($allowTextSmoothing) {
+    -webkit-font-smoothing: subpixel-antialiased;
+	  text-rendering: optimizeLegibility;
+  }
+}
+
+@mixin wrap-text() {
+	overflow-x: auto; /* Use horizontal scroller if needed */
+  text-wrap: wrap;
+  white-space: pre-wrap; 		/* CSS 3 */
+	white-space: -pre-wrap; 	/* Opera 4-6 */
+  white-space: -moz-pre-wrap !important;
+ 	white-space: -o-pre-wrap; /* Opera 7 */ 
+  word-wrap: break-word; 		/* IE 5.5+ */
+}
+
+@mixin no-wrap() {
+	text-wrap: none;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+@mixin ellipsize() { 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis;
+}
+
+@mixin ellipsized-single-line() {
+	text-wrap: none;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+
+@mixin text-height($height) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin centered-text($height) {
+	display: block;
+	height: $height;
+	width: 100%;
+	line-height: $height - 2px;
+	text-align: center;
+}
+
+@mixin structural-lists() {
+  ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+
+
+
+
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+@mixin hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// FONTS
+// --------------------------------------------------
+
+@mixin font-family-serif() {
+  font-family: $serifFontFamily;
+}
+@mixin font-family-sans-serif() {
+  font-family: $sansFontFamily;
+}
+@mixin font-family-monospace() {
+  font-family: $monoFontFamily;
+}
+@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+@mixin font-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseHeight) {
+  @include font-family-serif();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+@mixin font-sans-serif($size: $baseFontSize, $weight: normal, $lineHeight: $baseHeight) {
+  @include font-family-sans-serif();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+@mixin font-monospace($size: $baseFontSize, $weight: normal, $lineHeight: $baseHeight) {
+  @include font-family-monospace();
+  @include font-shorthand($size, $weight, $lineHeight);
+}
+
