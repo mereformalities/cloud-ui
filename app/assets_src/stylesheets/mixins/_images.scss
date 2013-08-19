@@ -1,0 +1,25 @@
+/* Adaptive Images */
+
+@mixin images-fill-height() {
+  img {
+    vertical-align: middle;
+    height: 100%;
+    width: auto;
+  }
+}
+
+@mixin images-fill-width() {
+  img {
+    max-width: 100%; 		// Make images inherently responsive
+    height: auto;
+  }
+}
+
+@mixin adaptive-images() {
+  @include images-fill-width;
+}
+
+// Assist images with no src attribute in Firefox
+img {
+  display: inline-block;
+}

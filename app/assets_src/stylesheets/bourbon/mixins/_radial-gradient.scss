@@ -48,7 +48,6 @@
         @if $value == $G1 {
           $G1: false;
         }
-
         @else if $value == $G2 {
           $G2: false;
         }
@@ -64,13 +63,15 @@
     $fallback-color: $fallback;
   }
 
-  background-color:  $fallback-color;
-  background-image: deprecated-webkit-gradient(radial, $deprecated-pos1, $deprecated-pos2, $full, $deprecated-radius1, $deprecated-radius2); // Safari <= 5.0
-  background-image:  -webkit-radial-gradient($pos, $shape-size, $full);
-  background-image:     -moz-radial-gradient($pos, $shape-size, $full);
-  background-image:      -ms-radial-gradient($pos, $shape-size, $full);
-  background-image:       -o-radial-gradient($pos, $shape-size, $full);
-  background-image: unquote("radial-gradient(#{$pos}, #{$shape-size}, #{$full})");
+  @if ($allowGradients) {
+    background-color:  $fallback-color;
+    background-image: deprecated-webkit-gradient(radial, $deprecated-pos1, $deprecated-pos2, $full, $deprecated-radius1, $deprecated-radius2); // Safari <= 5.0
+    background-image:  -webkit-radial-gradient($pos, $shape-size, $full);
+    background-image:     -moz-radial-gradient($pos, $shape-size, $full);
+    background-image:      -ms-radial-gradient($pos, $shape-size, $full);
+    background-image:       -o-radial-gradient($pos, $shape-size, $full);
+    background-image: unquote("radial-gradient(#{$pos}, #{$shape-size}, #{$full})");
+  }
 }
 
 //  Usage: Gradient position and shape-size are required. Color stops are optional.

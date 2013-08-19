@@ -72,8 +72,8 @@ sub {
   bottom: -0.25em; }
 
 img {
-  max-width: 100%;
-  vertical-align: middle;
+  /*max-width: 100%;
+  vertical-align: middle;*/
   border-width: 0;
   -ms-interpolation-mode: bicubic; }
 

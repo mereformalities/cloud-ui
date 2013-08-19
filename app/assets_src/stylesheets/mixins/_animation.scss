@@ -6,13 +6,28 @@
 //  @include transform(translate3d(0,0,0));
 //}
 
-@mixin gpu-transition($transition) {
-  //transform: translate3d(0,0,0);
-  //-webkit-transform: translateZ(0);
+@mixin fix-ios-flicker() {
+  // http://stackoverflow.com/a/3461770
   // http://blog.alexmaccaw.com/css-transitions
+  -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
+}
+
+@mixin gpu-transition($transition) {
+  @if ($allowAcceleration) {
+    @include translate3d(0, 0, 0);
+  }
+  @include fix-ios-flicker;
   @include transition($transition);
 }
+
+@mixin gpu-layer() {
+  @if ($allowAcceleration) {
+    @include translate3d(0, 0, 0);
+  }
+}
+
+// Positioning
 
 @mixin translate-left($amount) {
   @include translate3d(0 - $amount, 0, 0);

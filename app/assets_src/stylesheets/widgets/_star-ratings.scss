@@ -1,0 +1,49 @@
+/* Star Ratings */
+
+.star-rating {
+	display: inline-block;
+	width: 5 * $ratingStarWidth;
+	// FIX: I'd rather allow this to use line-height...
+	height: $ratingStarHeight;
+	@include clearfix;
+	i { 
+	  float: left;
+	  width: $ratingStarWidth;
+	}
+	&.editing {
+	  i { 
+	    @include clickable;
+	    &:hover {
+        color: $textColor;
+      }
+	  }
+	}
+}
+
+// TODO: Add default icon- classes
+.star-rating {
+  i {
+    @extend .icon-star-dot;
+    color: $lightTextColor;
+  }
+  i.on {
+    @extend .icon-star-small;
+  }
+  &.editable {
+    i.open {
+      @extend .icon-star-dot;
+      color: $lightTextColor;
+    }
+    i.trail {
+      @extend .icon-star-small;
+      color: $textColor;
+    }
+    i.on {
+      color: $textColor;
+    }
+    i:hover {
+      @extend .icon-star-small;
+      color: $textColor;
+    }
+  }
+}

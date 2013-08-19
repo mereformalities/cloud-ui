@@ -18,7 +18,6 @@
  */ 
 .pointer { cursor: pointer; }
 .movable { cursor: move; }
-.hand { cursor: hand; }
 .crosshair { cursor: crosshair; }
 .not-allowed { cursor: not-allowed; }
 /*
@@ -44,16 +43,4 @@
  */
 .affix {
   position: fixed;
-}
-/*
- * Utilities
- */
-.clearfix {
-  @include clearfix();
-}
-.hide-text {
-  @include hide-text();
-}
-.input-block-level {
-  @include input-block-level();
 }

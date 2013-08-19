@@ -8,10 +8,10 @@
 // Mixins
 @import "mixins";
 
-// Responsive defaults
-@import "responsive/responsive";
 // Utilities
 @import "responsive/utilities";
+// Adaptive images
+@import "responsive/images";
 // Large desktops
 @import "responsive/1200px-min";
 // Tablets to regular desktops

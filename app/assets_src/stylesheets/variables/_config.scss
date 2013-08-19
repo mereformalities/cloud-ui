@@ -10,8 +10,11 @@ $useButtonGradient:     true !default;
 $useButtonBorder:       true !default;
 $useBtnForSubmits:      true !default;
 
-/* Optimization */
-
+// Optimization
+$allowAnimation:        true !default;
 $allowTransitions:      true !default;
 $allowTextSmoothing:    true !default;
 $allowGradients:        true !default;
+$allowShadows:          true !default;
+$allowTransparency:     true !default;
+$allowAcceleration:     true !default;

@@ -1,0 +1,63 @@
+
+// TODO: Rename to prompt-
+
+#alert-overlay {
+  background-color: $pageBackground;
+  @include opacity(0.275);
+}
+#alert-container {
+  padding: baseHeights(0.7);
+  border-radius: baseHeights(0.5) - 1px;
+  background-color: rgba(#1d1e1f, 0.85);
+  @include box-shadow(rgba(#000, 0.11) 0px 2px 17px 5px);
+  color: $pageBackground;
+}
+#alert-title {
+  @include font-size(13px);
+  color: $pageBackground;
+  text-shadow: #303030 0px 0px 3px;
+  letter-spacing: 0;
+}
+#alert-content {
+  &.alert {}
+  &.confirm {}
+  &.prompt {}
+}
+#alert-message {
+  color: $lightTextColor;
+}
+#alert-prompt {
+  border: none;
+  font-size: 1.25em;
+  @include antialias;
+  height: baseHeights(1.25);
+  background-color: rgba(#161617, 0.12);
+  text-shadow: #303030 0px 0px 3px;
+  color: #ccc;
+  /*::-webkit-selection,
+  ::-moz-selection,
+  ::selection {
+    background-color: #999;
+  }*/
+}
+#alert-panel {
+  text-align: right;
+  padding-top: 1px;
+  .btn, .btn-primary {
+    margin-left: 3px;
+    min-width: baseHeights(4);
+    height: baseHeights(1.5);
+    border-radius: 3px;
+    color: $pageBackground;
+  }
+}
+#alert-ok {
+  background-color: rgba(#161617, 0.16);
+  border: 1px solid rgba(#262626, 0.18); // #222
+  text-shadow: #303030 0px 0px 3px;
+}
+#alert-cancel {
+  background-color: rgba($lightTextColor, 0.38);
+  border: 1px solid rgba(#eee, 0.07);
+  text-shadow: #111 0px 0px 1px;
+}

@@ -31,6 +31,7 @@ $secondaryAccent: 			$purple !default;
 // Base
 $pageBackground:        #f6f6f6 !default;
 $textColor:             #444 !default;
+$lightTextColor:        #aaa !default;
 $headingColor:          $grayDarker !default;
 $footerColor:           $grayDark !default;
 
@@ -91,37 +92,22 @@ $btnPrimaryForeground:              #fff !default;
 $btnPrimaryForegroundHighlight:     #fff !default;
 
 
+// Hr border color
+// ---------------
+$hrBorderColor:                 $grayLighter !default;
+
+
 // Forms
 // -------------------------
 $inputBackground:               $white !default;
 $inputBorder:                   #ccc !default;
-$inputBorderRadius:             1px !default;
+$inputBorderFocus:              darken($inputBorder, 11.5%) !default;
 $inputDisabledBackground:       $grayLighter !default;
 $formActionsBackground:         #f5f5f5 !default;
+$labelColor:                    $lightTextColor !default;
 
-// Dropdowns
-// -------------------------
-$dropdownBackground:            $white !default;
-$dropdownBorder:                rgba(0,0,0,0.2) !default;
-$dropdownDividerTop:            #e5e5e5 !default;
-$dropdownDividerBottom:         $white !default;
-
-$dropdownLinkColor:             $grayDark !default;
-
-$dropdownLinkColorActive:       $dropdownLinkColor !default;
-$dropdownLinkBackgroundActive:  $linkColor !default;
-
-$dropdownLinkColorHover:        $white !default;
-$dropdownLinkBackgroundHover:   $dropdownLinkBackgroundActive !default;
-
-
-// Scrollbars
-$scrollbarTrackColor: 			#fff 						  !default;
-$scrollbarThumbColor: 			#ccc						  !default;
-$scrollbarShadowColor: 			rgba(#333,0.2)    !default;
-$scrollbarInactiveColor: 		#eee  					  !default;
 
 // Text Selection
+// -------------------------
 $selectionBackground:				rgba(#4184c4,0.3) !default;
 $selectionForeground:				#666						  !default;
-

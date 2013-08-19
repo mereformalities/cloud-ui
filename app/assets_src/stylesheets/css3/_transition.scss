@@ -1,9 +1,11 @@
 // Pass-through
 @mixin transition ($transition) {
+  @if ($allowTransitions) {
   -webkit-transition: $transition;
      -moz-transition: $transition;
        -o-transition: $transition;
           transition: $transition;
+  }
 }
 
 // Source: Bourbon
@@ -21,7 +23,9 @@
     $full: compact($prop-1, $prop-2, $prop-3, $prop-4, $prop-5,
                    $prop-6, $prop-7, $prop-8, $prop-9);
 
-  @include prefixer(transition, $full, webkit, moz, ms, o);
+  @if ($allowTransitions) {
+    @include prefixer(transition, $full, webkit, moz, ms, o);
+  }
 }
 
 @mixin transition-property ($prop-1: all,
@@ -33,11 +37,13 @@
     $full: compact($prop-1, $prop-2, $prop-3, $prop-4, $prop-5,
                    $prop-6, $prop-7, $prop-8, $prop-9);
 
+  @if ($allowTransitions) {
    -webkit-transition-property: transition-property-names($full, 'webkit');
       -moz-transition-property: transition-property-names($full, 'moz');
        -ms-transition-property: transition-property-names($full, 'ms');
         -o-transition-property: transition-property-names($full, 'o');
            transition-property: transition-property-names($full, false);
+  }
 }
 
 @mixin transition-duration ($time-1: 0,
@@ -49,7 +55,9 @@
     $full: compact($time-1, $time-2, $time-3, $time-4, $time-5,
                    $time-6, $time-7, $time-8, $time-9);
 
-  @include prefixer(transition-duration, $full, webkit, moz, ms, o);
+  @if ($allowTransitions) {
+    @include prefixer(transition-duration, $full, webkit, moz, ms, o);
+  }
 }
 
 @mixin transition-timing-function ($motion-1: ease,
@@ -61,8 +69,10 @@
     $full: compact($motion-1, $motion-2, $motion-3, $motion-4, $motion-5,
                    $motion-6, $motion-7, $motion-8, $motion-9);
 
-// ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()
-  @include prefixer(transition-timing-function, $full, webkit, moz, ms, o);
+  @if ($allowTransitions) {
+    // ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()
+    @include prefixer(transition-timing-function, $full, webkit, moz, ms, o);
+  }
 }
 
 @mixin transition-delay ($time-1: 0,
@@ -74,5 +84,7 @@
     $full: compact($time-1, $time-2, $time-3, $time-4, $time-5,
                    $time-6, $time-7, $time-8, $time-9);
 
-  @include prefixer(transition-delay, $full, webkit, moz, ms, o);
+  @if ($allowTransitions) {
+    @include prefixer(transition-delay, $full, webkit, moz, ms, o);
+  }
 }

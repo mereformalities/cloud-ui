@@ -12,7 +12,7 @@
   	::-webkit-scrollbar-track {
   		border-radius: $scrollbarBorderRadius;
   		background-color: $scrollbarTrackColor;
-  		@include box-shadow(inset 0 0 6px $scrollbarShadowColor);
+  		//@include box-shadow(inset 0 0 6px $scrollbarShadowColor);
   	}
 
   	::-webkit-scrollbar-thumb {

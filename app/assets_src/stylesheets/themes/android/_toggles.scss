@@ -1,0 +1,59 @@
+// Toggle Widget
+
+/* Android Theme
+ * Based on Holo
+ */
+ 
+.android {
+	background-color: #b6b6b6;
+	color: #fff;
+}
+
+.android.toggle {
+	border: 2px solid #b6b6b6;
+}
+
+.android.switch {
+	overflow: hidden;
+}
+	
+.android.switch .slide-button {
+	background-color: #279fca;
+	
+	-webkit-transform: skew(20deg) translateX(10px);
+	-moz-transform: skew(20deg) translateX(10px);
+	-ms-transform: skew(20deg) translateX(10px);
+	-o-transform: skew(20deg) translateX(10px);
+	transform: skew(20deg);
+}
+
+.android.toggle .slide-button {
+	border-radius: 2px;
+	background-color: #848484;
+}
+
+/* Selected ON toggle */
+.android.toggle input:first-of-type:checked ~ .slide-button {
+	background-color: #279fca;
+}
+
+.android.switch input:first-of-type:checked ~ .slide-button {
+	-webkit-transform: skew(20deg) translateX(-10px);
+	-moz-transform: skew(20deg) translateX(-10px);
+	-ms-transform: skew(20deg) translateX(-10px);
+	-o-transform: skew(20deg) translateX(-10px);
+	transform: skew(20deg) translateX(-10px);
+}
+
+.android p {
+	color: #333;
+}
+
+.android span {
+	color: #fff;
+}
+
+.android.switch,
+.android span {
+	text-transform: uppercase;
+}

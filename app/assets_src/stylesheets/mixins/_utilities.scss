@@ -5,15 +5,18 @@
   overflow: auto; 		// Safari fix
 }
 
-// Element should behave like an anchor
+// Element (and any inline children) should behave like an anchor
 @mixin clickable() {
   pointer-events: auto;
   cursor: pointer;
+  span, b, em, ins, del {
+    cursor: pointer;
+  } 
 }
 
 // Allow click events to pass through to children
 // NOTE: Not supported by IE or Opera
-@mixin pass-through-events() {
+/*@mixin pass-through-events() {
 	pointer-events: none;
 	.clickable, a, button {
 	  @include clickable;
@@ -21,7 +24,7 @@
 	input, select, textarea { 
 		pointer-events: auto; 
 	}
-}
+}*/
 
 // Allow text selection
 @mixin selectable() {

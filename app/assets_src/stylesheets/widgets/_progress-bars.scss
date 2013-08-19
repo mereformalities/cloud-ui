@@ -7,7 +7,7 @@
 // ----------
 
 // Webkit
-@-webkit-keyframes progress-bar-stripes {
+/*@-webkit-keyframes progress-bar-stripes {
   from  { background-position: 40px 0; }
   to    { background-position: 0 0; }
 }
@@ -34,7 +34,7 @@
 @keyframes progress-bar-stripes {
   from  { background-position: 40px 0; }
   to    { background-position: 0 0; }
-}
+}*/
 
 
 
@@ -44,7 +44,7 @@
 // Outer container
 .progress {
   overflow: hidden;
-  height: $baseHeight / 4;
+  height: $progressHeight;
   margin-bottom: $baseHeight;
   background-color: $progressBackground;
   //@include gradient-vertical(#f5f5f5, #f9f9f9);
@@ -79,7 +79,7 @@
 
 // Call animation for the active one
 .progress.active .bar {
-  @include animation(progress-bar-stripes 2s linear infinite);
+  // @include animation(progress-bar-stripes 2s linear infinite);
   /*-webkit-animation: ;
      -moz-animation: progress-bar-stripes 2s linear infinite;
       -ms-animation: progress-bar-stripes 2s linear infinite;

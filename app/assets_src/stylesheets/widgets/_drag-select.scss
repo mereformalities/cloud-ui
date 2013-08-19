@@ -1,0 +1,14 @@
+// Selection Rectangle
+
+.selection-rectangle {
+  display: none;
+  position: absolute;
+  border: 1px solid $accentColor;
+  @include translucent-background($accentColor, 0.12); // .14
+  @include opacity(0.52);
+  z-index: $zindexBelowBackdrop;
+  
+  &.active { 
+    display: block; 
+  }
+}

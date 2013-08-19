@@ -44,6 +44,7 @@ textarea {
 label {
   display: block;
   margin-bottom: 5px; // MARK
+  color: $labelColor;
 }
 
 // Shared size and type resets
@@ -108,7 +109,7 @@ input[type="color"],
   // Focus state
   &:focus {
     //border-color: rgba(82,168,216,.7);
-		border-color: darken($inputBorder, 11.5%);
+		border-color: $inputBorderFocus;
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
     //@include box-shadow(#{inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,216,.3)});
@@ -127,7 +128,7 @@ input[type="radio"] {
 	margin-right: 6px;
 	background: $white;
 	border: 1px solid $inputBorder; // gainsboro
-	@include border-radius(1px);
+	border-radius: 1px;
 	@include box-sizing(border-box);
 	position: relative;
 	//line-height: normal;
@@ -211,7 +212,7 @@ input[type="checkbox"]:focus {
 	padding-right: 0px!important;
 	margin-bottom: 9px!important;
   //-webkit-font-smoothing: antialiased;
-  -webkit-background-clip: padding-box;
+  @include background-clip(padding-box);
 	vertical-align: top!important;
 	text-align: left!important;
 	@include user-select(none);
@@ -352,11 +353,11 @@ textarea[class*="span"],
 
 
 
-// GRID SIZING FOR INPUTS
+// GRID SIZING FOR INPUTS (Use something like Jeet instead...)
 // ----------------------
 
 // Grid sizes
-@include grid-input($gridColumnWidth, $gridGutterWidth);
+// @include grid-input($gridColumnWidth, $gridGutterWidth);
 
 // Control row for multiple inputs per line
 .controls-row {
@@ -398,15 +399,15 @@ input[type="checkbox"][readonly] {
 
 // Warning
 .control-group.warning {
-  @include formFieldState($warningText, $warningText, $warningBackground);
+  //@include formFieldState($warningText, $warningText, $warningBackground);
 }
 // Error
 .control-group.error {
-  @include formFieldState($errorText, $errorText, $errorBackground);
+  //@include formFieldState($errorText, $errorText, $errorBackground);
 }
 // Success
 .control-group.success {
-  @include formFieldState($successText, $successText, $successBackground);
+  //@include formFieldState($successText, $successText, $successBackground);
 }
 
 // HTML5 invalid states
@@ -433,7 +434,7 @@ select:focus:required:invalid {
   margin-bottom: $baseHeight;
   background-color: $formActionsBackground;
   border-top: 1px solid #e5e5e5;
-  @include clearfix(); // Adding clearfix to allow for .pull-right button containers
+  @include clearfix; // Adding clearfix to allow for .pull-right button containers
 }
 
 
@@ -464,7 +465,7 @@ select:focus:required:invalid {
 // ------------
 
 // Allow us to put symbols and text within the input field for a cleaner look
-.input-append,
+/*.input-append,
 .input-prepend {
   margin-bottom: 5px;
   font-size: 0;
@@ -547,21 +548,21 @@ select:focus:required:invalid {
     margin-left: -1px;
     border-radius: 0 $inputBorderRadius $inputBorderRadius 0;
   }
-}
+}*/
 
 
 // SEARCH FORM
 // -----------
-input.search-query {
+/*input.search-query {
   padding-right: 14px;
   padding-right: 4px \9;
   padding-left: 14px;
-  padding-left: 4px \9; /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  padding-left: 4px \9; // IE7-8 doesn't have border-radius, so don't indent the padding
   margin-bottom: 0; // Remove the default margin on all inputs
   border-radius: 15px;
 }
 
-/* Allow for input prepend/append in search forms */
+// Allow for input prepend/append in search forms
 .form-search .input-append .search-query,
 .form-search .input-prepend .search-query {
   border-radius: 0; // Override due to specificity
@@ -577,7 +578,7 @@ input.search-query {
 }
 .form-search .input-prepend .btn {
   border-radius: 14px 0 0 14px;
-}
+}*/
 
 
 

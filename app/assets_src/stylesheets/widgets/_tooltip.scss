@@ -15,6 +15,7 @@
   visibility: visible;
   padding: 5px;
   font-size: 11px;
+  line-height: 11px;
   @include opacity(0);
   &.in     { @include opacity(0.8); }
   &.top    { margin-top:  -3px; }
@@ -26,12 +27,14 @@
 // Wrapper for the tooltip content
 .tooltip-inner {
   max-width: 200px;
-  padding: 3px 8px;
-  color: $tooltipColor;
+  padding: 4px 8px;
+  color: $tooltipTextColor;
+  @include antialias;
+  text-transform: uppercase;
   text-align: center;
   text-decoration: none;
   background-color: $tooltipBackground;
-  border-radius: 3px;
+  border-radius: $tooltipBorderRadius;
 }
 
 // Arrows

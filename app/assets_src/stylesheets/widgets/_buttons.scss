@@ -5,7 +5,6 @@
   display: inline-block;
   @include ie7-inline-block();
   //padding: 4px 14px;
-  padding: $inputVerticalPad 1.0em;
   margin-bottom: 0; // for input.btn
   font-size: $baseFontSize;
   line-height: $baseHeight;
@@ -19,9 +18,11 @@
     background-color: $btnBackground;
   }
   @if ($useButtonBorder) {
+    padding: ($inputVerticalPad - 1px) 1.75em; // TODO: Base input height on $btnHeight
     border: 1px solid $btnBorder;
     *border: 0; // Remove the border to prevent IE7's black border on input:focus
   } @else {
+    padding: $inputVerticalPad 1.75em;
     border: none;
   }
   border-radius: $btnBorderRadius;

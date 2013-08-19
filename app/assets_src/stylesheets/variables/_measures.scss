@@ -16,15 +16,16 @@ $baseMeasure:						20px  !default;
 // -------------------------
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
+$zindexBelowDropdown:      500 !default;
 $zindexDropdown:          1000 !default;
 $zindexPopover:           1010 !default;
-$zindexTooltip:           1020 !default;
-$zindexFixedNavbar:       1030 !default;
+$zindexFixedNavbar:       1020 !default;
+$zindexTooltip:           1030 !default;
 $zindexBelowBackdrop:     1040 !default;
-$zindexModalBackdrop:     1050 !default;
-$zindexAboveBackdrop:     1060 !default;
-$zindexModal:             1070 !default;
-$zindexAboveModal:        1080 !default;
+$zindexModalBackdrop:     2000 !default;
+$zindexAboveBackdrop:     2010 !default;
+$zindexModal:             2020 !default;
+$zindexAboveModal:        2030 !default;
 $zindexAboveAll:          3000 !default;
 
 

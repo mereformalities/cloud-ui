@@ -46,7 +46,7 @@ cite {
   font-style: normal;
 }
 ins { 
-	text-decoration: none; 
+	text-decoration: none;
 }
 del { 
 	text-decoration: line-through;
@@ -147,7 +147,7 @@ dd {
 hr {
   margin: $baseHeight 0;
   border: 0;
-  border-top: 1px solid $hrBorder;
+  border-top: 1px solid $hrBorderColor;
 }
 
 // Figure

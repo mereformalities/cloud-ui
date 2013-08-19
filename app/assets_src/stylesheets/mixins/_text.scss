@@ -59,7 +59,7 @@
 @mixin antialias() {
   @if ($allowTextSmoothing) {
     -webkit-font-smoothing: antialiased;
-  	text-rendering: optimizeLegibility;
+  	//text-rendering: optimizeLegibility;
   	// http://sam.brown.tc/entry/367/follow-up-safari-s-text-shadow-anti-aliasing-css-hack
   	// text-shadow: rgba(0,0,0,0.01) 0 0 1px;
   }
@@ -67,7 +67,7 @@
 @mixin subpixel() {
   @if ($allowTextSmoothing) {
     -webkit-font-smoothing: subpixel-antialiased;
-	  text-rendering: optimizeLegibility;
+	  //text-rendering: optimizeLegibility;
   }
 }
 
@@ -82,19 +82,19 @@
 }
 
 @mixin no-wrap() {
-	text-wrap: none;
+	// text-wrap: none;
 	overflow: hidden;
 	white-space: nowrap;
 }
 
-@mixin ellipsize() { 
-	white-space: nowrap; 
+@mixin ellipsize() {  
 	overflow: hidden; 
+	// white-space: nowrap;
 	text-overflow: ellipsis;
 }
 
 @mixin ellipsized-single-line() {
-	text-wrap: none;
+	// text-wrap: none;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;	
@@ -113,11 +113,16 @@
 	text-align: center;
 }
 
+@mixin structural-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 @mixin structural-lists() {
   ol, ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    @include structural-list;
+    @include clearfix;
   }
 }
 

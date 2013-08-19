@@ -1,12 +1,5 @@
 /* Tables */
 
-
-
-//
-// Tables
-// --------------------------------------------------
-
-
 // BASE TABLES
 // -----------------
 
@@ -72,8 +65,7 @@ table td.col-val { text-align: center; }
 // -------------------------------
 
 .table-condensed {
-  th,
-  td {
+  th, td {
     padding: 4px 5px;
   }
 }
@@ -180,11 +172,11 @@ table [class*=span],
 }
 
 // Change the column widths to account for td/th padding
-table {
-  @for $i from 1 through 24 {
-    .span#{$i} { @include tableColumns($i); }
-  }
-}
+//table {
+//  @for $i from 1 through 24 {
+//    .span#{$i} { @include tableColumns($i); }
+//  }
+//}
 
 
 // TABLE BACKGROUNDS

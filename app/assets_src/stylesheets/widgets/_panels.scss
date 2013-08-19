@@ -1,0 +1,40 @@
+/* Panels */
+
+.panel {
+  .panel-header {
+    border-bottom: 1px solid $panelBorderColor;
+    h3 {
+      margin: 0;
+      padding-left: baseHeights(0.25);
+      @include text-height(baseHeights(2) - 1px);
+      @include ellipsized-single-line;
+      letter-spacing: 0; // TODO: Change kerning explicity (kernedHeader)
+      font-size: 1.1em; // 1.25em;
+      //color: darken($lightTextColor, 1%);
+      color: $lightTextColor;
+      @include clickable;
+    }
+    &:hover h3 { color: $textHoverColor; }
+  }
+  .panel-body {
+    display: none;
+    //padding-top: baseHeights(1.5) - 2px;
+    //padding-bottom: baseHeights(1.5);
+    min-height: baseHeights(4); // 2.5
+  }
+  &:first-child {
+    border-top: 1px solid $panelBorderColor;
+  }
+  &.open {
+    .panel-header {
+      border-bottom: none;
+      h3 { color: $textColor; }
+      &:hover h3 { color: $textColor; }
+    }
+    .panel-body {
+      display: block;
+      border-top: 2px solid #d2d2d2; // $panelBorderOpen;
+      border-bottom: 2px solid $panelBorderOpen;
+    }
+  }
+}

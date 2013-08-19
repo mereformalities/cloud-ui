@@ -6,16 +6,18 @@
 	@else { height: $height; }  
 }
 
-// Fill parent
+// Fill parent's shape
 @mixin fill() {
-  display: block;
+  // display: block;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 
-// Cover parent
+// Cover parent entirely
 @mixin cover() {
-  display: block;
+  // display: block;
   position: absolute; 
   top: 0; 
   right: 0;
@@ -23,9 +25,9 @@
   left: 0;
 }
 
-// Cover the viewport
+// Cover the viewport entirely
 @mixin cover-viewport() {
-  display: block;
+  // display: block;
   position: fixed;
   top: 0;
   right: 0;

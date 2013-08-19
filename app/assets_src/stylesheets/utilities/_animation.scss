@@ -18,6 +18,37 @@
   }
 }
 
+@mixin jump($distance: -9999px) {
+  top: $distance;
+  &.in {
+    top: 0;
+  }
+}
+
+@mixin snap() {
+  @include opacity(0);
+  &.in {
+    @include opacity(1);
+  }
+}
+
+@mixin slide($transition: $slideTransition) {
+  display: none;
+  height: 0;
+  @include gpu-transition($transition);
+  &.in {
+    display: block;
+    height: auto;
+  }
+}
+
+/*@mixin snapped() {
+  @include opacity(1);
+  &.out {
+    @include opacity(0);
+  }
+}*/
+
 .fade {
   @include fade($fadeTransition);
   &.quick {
@@ -32,14 +63,38 @@
   }
 }
 
+// Position element offscreen until needed
+.jump {
+  @include jump;
+}
+
+.snap {
+  @include snap;
+}
+
+.slide {
+  @include slide;
+}
+
+/*.snapped {
+  @include snapped;
+}*/
+
 .collapse {
   position: relative;
   height: 0;
   overflow: hidden;
   overflow: visible \9;
   @include gpu-transition($collapseTransition);
-  &.in, &.open {
+  &.in {
     height: auto;
+    overflow: visible;
+  }
+}
+.open {
+  .collapse {
+    height: auto;
+    overflow: visible;
   }
 }
 
