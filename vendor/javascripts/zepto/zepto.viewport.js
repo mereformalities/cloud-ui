@@ -33,6 +33,7 @@
 	 * Usage:  $.belowTheFold(element, {threshold: 100, container: window})
 	 *
 	 * TODO: Rewrite using a central function returning flags for each boundary
+	 * TODO: Catch jquery var for fewer dom calculations
 	 * TODO: I can actually use inViewport (with a threshold) for most checks...
 	 */
 	$.belowTheFold = function(element, options) {
