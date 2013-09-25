@@ -67,7 +67,7 @@
   z-index: $zindexDropdown;
   // .open returns it to 'block'
   display: none;
-  // Add arrow
+  // Add up-arrow
   @include popover-arrow(5px, $dropdownBackground, $dropdownBorder, up);
 
   // Aligns dropdown to toggle's left edge
@@ -80,6 +80,24 @@
   &.pull-right {
     right: 0;
     left: auto;
+  }
+
+  // Removes the arrow
+  &.no-arrow:before,
+  &.no-arrow:after {
+    border: none;
+  }
+  
+  &.arrow-left {
+    top: 0 - baseHeights(0.75);
+    left: 131%;
+    @include popover-arrow(5px, $dropdownBackground, $dropdownBorder, left, baseHeights(1.25));
+  }
+  
+  &.arrow-right {
+    top: 0 - baseHeights(0.75);
+    right: 0 - baseHeights(1);
+    @include popover-arrow(5px, $dropdownBackground, $dropdownBorder, right, baseHeights(1.25));
   }
   
   // Menu item
@@ -96,6 +114,17 @@
       border-bottom: 1px solid transparent;
       color: $dropdownLinkColor;
       clear: both;
+    }
+  }
+  
+  &.icons-text {
+    min-width: baseHeights(10.75) - 2px;
+    li a {
+      padding-left: baseHeights(0.75) - 1px;
+      i {
+        float: left;
+        margin-right: baseHeights(0.4);
+      }
     }
   }
 

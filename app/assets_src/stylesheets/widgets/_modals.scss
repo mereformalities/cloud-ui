@@ -139,11 +139,11 @@ $modal-padding-h: baseHeights(1.25) + 1px;
 .actions {
   .btn {
     font-weight: $boldWeight;
-    border-color: $modal-border;
+    border-color: darken($modal-border, 1%);
     color: lighten($textColor, 17.5%);
     &:hover {
       background-color: darken($modalFooterBackground, 2.5%);
-      border-color: darken($modal-border, 2.5%);
+      border-color: darken($modal-border, 3%);
       color: $textColor;
     }
   }

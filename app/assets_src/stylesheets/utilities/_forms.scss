@@ -42,7 +42,7 @@ textarea {
 
 // Identify controls by their labels
 label {
-  display: block;
+  display: inline-block;
   margin-bottom: 5px; // MARK
   color: $labelColor;
 }
@@ -66,13 +66,17 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: $baseHeight;
   padding: $inputVerticalPad $inputHorizontalPad; // MARK
-  margin-bottom: 9px;
-  font-size: $baseFontSize;
-  line-height: $baseHeight;
-  color: $gray;
+  font-size: $inputFontSize;
+  @include text-height($baseHeight);
   border-radius: $inputBorderRadius;
+  margin-bottom: 9px;
+  color: $inputTextColor;
+}
+
+// Reset font size for selects
+select {
+  font-size: $baseFontSize;
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -80,6 +84,7 @@ input[type="color"],
 textarea, input {
   width: 210px;
 }
+
 // Reset height since textareas have rows
 textarea {
   height: auto;
@@ -102,8 +107,8 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   background-color: $inputBackground;
-  border: 1px solid $inputBorder;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.03));
+  border: $inputBorder;
+  @include box-shadow($inputBoxShadow);
   @include transition($inputStateTransition);
 
   // Focus state
@@ -119,22 +124,22 @@ input[type="color"],
 
 input[type="checkbox"],
 input[type="radio"] {
+  position: relative;
 	display: inline-block;
 	@include appearance(none);
 	@include dimensions(14px);
-	@include forceVerticalAlign($baseHeight, 14px);
-	*margin-top: 0; /* IE7 */
+	@include forceVerticalAlign($baseHeight, 14px); // FINISH
+	//*margin-top: 0; /* IE7 */
   margin-top: 1px \9; /* IE8-9 */
 	margin-right: 6px;
-	background: $white;
-	border: 1px solid $inputBorder; // gainsboro
+	background: $inputBackground;
+	border: 1px solid $inputBorderColor; // gainsboro
 	border-radius: 1px;
 	@include box-sizing(border-box);
-	position: relative;
 	//line-height: normal;
   cursor: pointer;
 	//&:hover { border-color: $contrast-12; }
-	&:checked { background: $white; }
+	//&:checked { background: $white; }
 }
 input[type="radio"] {
 	&:checked {
@@ -183,7 +188,7 @@ input[type="file"] {
 // Make select elements obey height by applying a border
 select {
   width: 220px; // default input width + 10px of padding that doesn't get applied
-  border: 1px solid darken($inputBorder, 2%);
+  border: 1px solid darken($inputBorderColor, 2%);
   background-color: $inputBackground; // Chrome on Linux and Mobile Safari need background-color
 }
 
@@ -208,13 +213,13 @@ input[type="checkbox"]:focus {
 .btn-select {
 	position: relative;
   overflow: hidden;
-	padding-left: 0px!important;
-	padding-right: 0px!important;
-	margin-bottom: 9px!important;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	margin-bottom: 9px !important;
   //-webkit-font-smoothing: antialiased;
   @include background-clip(padding-box);
-	vertical-align: top!important;
-	text-align: left!important;
+	vertical-align: top !important;
+	text-align: left !important;
 	@include user-select(none);
 	cursor: pointer;
 	// Holds the 'prompt' message
@@ -246,7 +251,7 @@ input[type="checkbox"]:focus {
 .uneditable-textarea {
   color: $grayLight;
   background-color: darken($inputBackground, 1%);
-  border-color: $inputBorder;
+  border-color: $inputBorderColor;
   @include box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
   cursor: not-allowed;
 }

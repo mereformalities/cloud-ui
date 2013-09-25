@@ -54,11 +54,14 @@ $modalFooterBackground:   #f5f5f5 !default;
 
 
 // Form inputs
+$inputBorder:             1px solid $inputBorderColor !default;
 $inputBorderRadius:       1px !default;
+$inputBoxShadow:          0 1px 1px rgba(0,0,0,0.03) inset !default;
 $inputStateTransition:    #{border linear .05s, box-shadow linear .05s} !default;
 
 
 // Form alignment
+$inputFontSize:           $baseFontSize !default;
 $inputVerticalPad:        4px !default;
 $inputHorizontalPad:			6px !default;
 
@@ -117,24 +120,6 @@ $heroUnitHeadingColor:            inherit !default;
 $heroUnitLeadColor:               inherit !default;
 
 
-// Form states and alerts
-$warningText:             #bb9650 !default;
-$warningBackground:       #fcf8e3 !default;
-$warningBorder:           darken(adjust-hue($warningBackground, -9), 15%) !default;
-
-$errorText:               #b94a48 !default;
-$errorBackground:         #f2dede !default;
-$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
-
-$successText:             #468847 !default;
-$successBackground:       #dff0d8 !default;
-$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
-
-$infoText:                #3a87ad !default;
-$infoBackground:          #d9edf7 !default;
-$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
-
-
 // Alerts
 $alertBorderRadius:       1px !default;
 $alertTextShadow:         0 1px 0 rgba(255,255,255,0.5) !default;
@@ -145,7 +130,7 @@ $dropdownPadding:               6px !default;
 $dropdownBorderRadius:          baseHeights(0.25) !default;
 $dropdownBackground:            $white !default;
 $dropdownBorder:                rgba(108,108,108,0.2) !default;
-$dropdownBoxShadow:             0 2px 11px rgba(0,0,0,0.11) !default; //0 3px 8px rgba(0,0,0,0.1) !default; // 0 2 6
+$dropdownBoxShadow:             0 1px 13px rgba(0,0,0,0.11) !default; //0 3px 8px rgba(0,0,0,0.1) // 2 11, 2 6
 $dropdownDivider:               $dropdownBorder !default; // #e5e5e5
 
 $dropdownLinkColor:             $lightTextColor !default; // $grayDark

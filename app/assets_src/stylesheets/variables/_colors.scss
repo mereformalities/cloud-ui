@@ -2,7 +2,6 @@
 
 
 // Grays
-// -------------------------
 $black:                 #000 !default;
 $grayDarker:            #222 !default;
 $grayDark:              #333 !default;
@@ -14,7 +13,6 @@ $white:                 #fff !default;
 
 
 // Accent colors
-// -------------------------
 $blue:                  #0090d6 !default;
 $blueDark:              #008cd2 !default;
 $green:                 #46a546 !default;
@@ -30,8 +28,10 @@ $secondaryAccent: 			$purple !default;
 
 // Base
 $pageBackground:        #f6f6f6 !default;
+$accentColor:           $primaryAccent !default;
 $textColor:             #444 !default;
 $lightTextColor:        #aaa !default;
+$textHoverColor:        #777 !default; // TODO: Rename! 
 $headingColor:          $grayDarker !default;
 $footerColor:           $grayDark !default;
 
@@ -52,15 +52,17 @@ $smallPrintColor: 			#999 !default;
 
 
 // Tables
-// -------------------------
 $tableBackground:                   transparent !default; // overall background-color
 $tableBackgroundAccent:             #f9f9f9 !default; // for striping
 $tableBackgroundHover:              #f5f5f5 !default; // for hover
 $tableBorder:                       #ddd !default; // table and cell border
 
 
+// Hr border color
+$hrBorderColor:                     $grayLighter !default;
+
+
 // Buttons
-// -------------------------
 $btnBackground:                     #fefefe !default; // fallback: f8f8f8
 $btnBackgroundHighlight:            #f3f3f3 !default; // f3f3f3
 $btnBorder:                         #d1d1d1 !default; // cecece, cfcfcf on white?
@@ -92,22 +94,35 @@ $btnPrimaryForeground:              #fff !default;
 $btnPrimaryForegroundHighlight:     #fff !default;
 
 
-// Hr border color
-// ---------------
-$hrBorderColor:                 $grayLighter !default;
+// Form states and alerts
+$warningText:             #bb9650 !default;
+$warningBackground:       #fcf8e3 !default;
+$warningBorder:           darken(adjust-hue($warningBackground, -9), 15%) !default;
+
+$errorText:               #b94a48 !default;
+$errorBackground:         #f2dede !default;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+
+$successText:             #509949 !default;
+$successBackground:       #dff0d8 !default;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+
+$infoText:                #3a87ad !default;
+$infoBackground:          #d9edf7 !default;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
 
 
 // Forms
-// -------------------------
+$inputTextColor:                $gray !default;
 $inputBackground:               $white !default;
-$inputBorder:                   #ccc !default;
-$inputBorderFocus:              darken($inputBorder, 11.5%) !default;
+$inputBorderColor:              #ccc !default;
+$inputBorder:                   1px solid $inputBorderColor !default;
+$inputBorderFocus:              darken($inputBorderColor, 11.5%) !default;
 $inputDisabledBackground:       $grayLighter !default;
 $formActionsBackground:         #f5f5f5 !default;
 $labelColor:                    $lightTextColor !default;
 
 
 // Text Selection
-// -------------------------
 $selectionBackground:				rgba(#4184c4,0.3) !default;
 $selectionForeground:				#666						  !default;

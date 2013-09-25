@@ -39,6 +39,22 @@
 
     constructor: Dropdown
 
+  , show: function (e) {
+	  var $this = $(this)
+	    , $parent = getParent($this)
+	    , isActive = $parent.hasClass('open')
+
+	  if (!isActive) $this.dropdown('toggle');
+	}
+	
+  , hide: function (e) {
+	  var $this = $(this)
+	    , $parent = getParent($this)
+	    , isActive = $parent.hasClass('open')
+
+	  if (isActive) $this.dropdown('toggle');
+    }
+
   , toggle: function (e) {
       var $this = $(this)
         , $parent
@@ -55,7 +71,7 @@
 
 	  event = $.Event(isActive ? 'hidden' : 'shown')
 
-      clearMenus()
+      if (!isActive) clearMenus()
       //if (!isActive) {
       $parent.toggleClass('open')
       //} $this.focus()
@@ -111,6 +127,8 @@
     $(toggle).each(function () {
       getParent($(this)).removeClass('open')
     })
+    // Just clear everything!
+    $('.dropdown').removeClass('open');
   }
 
   function getParent($this) {

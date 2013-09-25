@@ -70,7 +70,6 @@
     }
 
   , enter: function (e) {
-	  console.log('enter')
       var self = $(e.currentTarget)[this.type](this._options).data(this.type)
 
       if (!self.options.delay || !self.options.delay.show) return self.show()

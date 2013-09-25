@@ -50,7 +50,8 @@
 }
 
 // Popover arrows
-@mixin popover-arrow($size, $color, $borderColor, $dir: up, $offset: 0, $position: 50%) {
+// TODO: This could also be done using a 45 degree rotation
+@mixin popover-arrow($size, $color, $borderColor, $dir: up, $position: 50%, $offset: 0) {
   // Note: $offset should NOT count the border
   $totalOffset: $offset + (2 * $size);
   &:before, &:after {
