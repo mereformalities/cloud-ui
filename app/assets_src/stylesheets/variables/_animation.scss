@@ -2,5 +2,6 @@
 
 $fadeTransition:        opacity .15s linear !default;
 $quickFadeTransition:   opacity .07s linear !default;
+$slowFadeTransition:    opacity .48s ease-out !default;
 $collapseTransition:    height .25s ease !default;
 $slideTransition:       height .33s linear !default;

@@ -32,6 +32,10 @@
   }
 }
 
+@mixin hide-on-inactivity() {
+  @include transition($slowFadeTransition);
+}
+
 @mixin slide($transition: $slideTransition) {
   display: none;
   height: 0;
@@ -70,6 +74,17 @@
 
 .snap {
   @include snap;
+}
+
+// Hide on inactivity
+.hoi {
+  @include hide-on-inactivity;
+}
+
+.inactive {
+  .hoi {
+    @include opacity(0);
+  }
 }
 
 .slide {
