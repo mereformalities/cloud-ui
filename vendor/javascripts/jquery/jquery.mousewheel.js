@@ -37,7 +37,7 @@
 
     $.event.special.mousewheel = {
         setup: function() {
-			console.log('setup');
+			// console.log('mousewheel:setup');
             if ( this.addEventListener ) {
                 for ( var i = toBind.length; i; ) {
                     this.addEventListener( toBind[--i], handler, false );
@@ -48,7 +48,7 @@
         },
 
         teardown: function() {
-			console.log('teardown');
+			// console.log('mousewheel:teardown');
             if ( this.removeEventListener ) {
                 for ( var i = toBind.length; i; ) {
                     this.removeEventListener( toBind[--i], handler, false );

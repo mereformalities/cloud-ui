@@ -19,14 +19,10 @@
 }
 
 // Hide from screenreaders and browsers
-// Credit: HTML5 Boilerplate
 .hidden {
   display: none;
   visibility: hidden;
 }
-
-// Visibility utilities
-
 // For desktops
 .visible-phone     { display: none !important; }
 .visible-tablet    { display: none !important; }
