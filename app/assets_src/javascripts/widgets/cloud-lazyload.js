@@ -53,11 +53,11 @@
 		if (options) {
 			$.extend(settings, options);
 		}
-		
+
 		// Named function to pass event handlers
 		var updateHandler = function (event) {
 			return update();
-		}
+		};
 
 		// Cache container as Zepto object
 		var $scroller = (settings.container === undefined ||
@@ -80,16 +80,16 @@
 				elementsLeft;
 
 			self.loaded = false;
-			
+
 			// Handle cached images ('load' is inconsistent)
 			if (self.complete || self.readystate === 4) {
-			      $self.trigger('load');
+				$self.trigger('load');
 			}
 
 			// When appear is triggered load original image
 			$self.one('appear', function () {
 				if (!this.loaded) {
-					
+
 					// console.log('appear called on '+ $self.data(settings.dataAttribute));
 
 					// Run user-defined callback
@@ -101,13 +101,13 @@
 					var loadHandler = function () {
 						//$self.hide().attr('src', $self.data(settings.dataAttribute));
 						$self.attr('src', $self.data(settings.dataAttribute));
-						
+
 						// Don't want all animating together
 						// Still not great--really need requestAnimationFrame
 						setTimeout(function () {
-						
-							//$self[settings.effect](settings.effectSpeed);
-							//$self['show']();
+
+							// $self[settings.effect](settings.effectSpeed);
+							// $self['show']();
 							$self.addClass('in');
 
 							self.loaded = true;
@@ -123,10 +123,10 @@
 								var elementsLeft = elements.length;
 								settings.load.call(self, elementsLeft, settings);
 							}
-						
+
 						}, Math.floor(Math.random() * 190));
-					}
-					
+					};
+
 					// What we really want to do is fade in the image (with a
 					// desaturate filter applied) as soon as the jpeg is ready
 					// to render its first pass, then fully saturate the image
@@ -147,14 +147,14 @@
 					}
 				});
 			}
-			
+
 			// Additional event to fire an update manually
 			$self.on('check', updateHandler);
 		});
 
 		// Check if something appears when window is resized
 		$window.on('resize', updateHandler);
-		
+
 		// Clean up event handler (using jquery++)
 		$(this).on('destroyed', function () {
 			$window.off('resize', updateHandler);

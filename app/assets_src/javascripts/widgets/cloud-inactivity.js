@@ -20,30 +20,30 @@
 !function ($) {
 
 	'use strict'; // jshint ;_;
-	
+
 	var timeout = 7500,
 		update, timer;
-	
+
 	update = function () {
 		// Remove class
 		$('body').removeClass('inactive');
-		
-	    if (timer) {
-	        clearTimeout(timer);
-	        timer = 0;
-	    }
-	    timer = setTimeout(function () {
+
+		if (timer) {
+			clearTimeout(timer);
+			timer = 0;
+		}
+		timer = setTimeout(function () {
 			// Append class
 			$('body').addClass('inactive');
-	    }, timeout);
+		}, timeout);
 	};
-	
+
 	/* INACTIVITY DATA-API
 	 * =============== */
 
 	$(function () {
 		// Set timer on mousemove
-		$(document).mousemove(update);
+		$(document).mousemove(update); // throttle
 		// Initialize
 		update();
 	});
