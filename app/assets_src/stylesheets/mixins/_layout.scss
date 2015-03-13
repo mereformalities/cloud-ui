@@ -54,6 +54,16 @@
 @mixin panel-left() { display: block; position: fixed; top: 0; left: 0; bottom: 0; }
 
 
+// Vertical centering
+@mixin vertical-align-middle {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+  // -webkit-transform: translateY(-50%);
+  // -ms-transform: translateY(-50%);
+  // transform: translateY(-50%);
+}
+
 // Source: Bourbon Addons
 @mixin position ($position: relative, $coordinates: 0 0 0 0) {
 
