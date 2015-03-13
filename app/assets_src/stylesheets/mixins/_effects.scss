@@ -54,6 +54,9 @@
 @mixin popover-arrow($size, $color, $borderColor, $dir: up, $position: 50%, $offset: 0) {
   // Note: $offset should NOT count the border
   $totalOffset: $offset + (2 * $size);
+  $arrowPosition: 0 - $totalOffset - 1px;
+  $bgPosition: 0 - $totalOffset;
+
   &:before, &:after {
     position: absolute;
     @if ($dir == up) or ($dir == down) {
@@ -64,19 +67,23 @@
   }
   // Border
   &:before {
-    @include caret($size, $borderColor, $dir); 
-    @if      ($dir == right)  { left: $totalOffset + 1px; }
-    @else if ($dir == left)   { left: 0 - $totalOffset - 1px; }
-    @else if ($dir == down)   { top:  $totalOffset + 1px; } 
-    @else                     { top:  0 - $totalOffset - 1px; }
+    @include caret($size, $borderColor, $dir);
+ // @if      ($dir == right)  { left: $totalOffset + 1px; right: auto; }
+    @if      ($dir == right)  { right: $arrowPosition; left: auto; }
+    @else if ($dir == left)   { left: $arrowPosition; right: auto; }
+ // @else if ($dir == down)   { top: $totalOffset + 1px; }
+    @else if ($dir == down)   { bottom: $arrowPosition; top: auto; }
+    @else                     { top: $arrowPosition; bottom: auto; }
   }
   // Background
   &:after {
     @include caret($size, $color, $dir);
-    @if      ($dir == right)  { left: $totalOffset; } 
-    @else if ($dir == left)   { left: 0 - $totalOffset; }
-    @else if ($dir == down)   { top:  $totalOffset; } 
-    @else                     { top:  0 - $totalOffset; } 
+ // @if      ($dir == right)  { left: $totalOffset; }
+    @if      ($dir == right)  { right: $bgPosition; left: auto; }
+    @else if ($dir == left)   { left: $bgPosition; right: auto; }
+ // @else if ($dir == down)   { top: $totalOffset; }
+    @else if ($dir == down)   { bottom: $bgPosition; top: auto; }
+    @else                     { top: $bgPosition; bottom: auto; }
   }
 }
 
