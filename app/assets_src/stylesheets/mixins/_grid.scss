@@ -20,13 +20,6 @@
   width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
 }
 
-// Centered container element
-@mixin container-fixed() {
-  margin-right: auto;
-  margin-left: auto;
-  @include clearfix();
-}
-
 
 // The Grid
 @mixin grid-core($gridColumnWidth, $gridGutterWidth) {

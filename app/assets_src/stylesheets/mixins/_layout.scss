@@ -3,7 +3,7 @@
 @mixin dimensions($square, $height: -1px) {
 	width: $square;
 	@if $height < 0 { height: $square; }
-	@else { height: $height; }  
+	@else { height: $height; }
 }
 
 // Fill parent's shape --> TODO: make these Jeet-style functions, with optional offsets?
@@ -18,8 +18,8 @@
 // Cover parent entirely
 @mixin cover() {
   // display: block;
-  position: absolute; 
-  top: 0; 
+  position: absolute;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -120,7 +120,6 @@
   margin-top: ($navbarHeight - $elementHeight) / 2;
 }
 
-
 // Center-align a block level element
 @mixin center-block() {
   display: block;
@@ -129,13 +128,13 @@
 }
 
 // Legacy support for inline-block in IE7 (maybe IE6)
-@mixin inline-block {
-  display: inline-block;
-  vertical-align: baseline;
-  zoom: 1;
-  *display: inline;
-  *vertical-align: auto;
-}
+// @mixin inline-block {
+//   display: inline-block;
+//   vertical-align: baseline;
+//   zoom: 1;
+//   *display: inline;
+//   *vertical-align: auto;
+// }
 
 // IE7 inline-block
 @mixin ie7-inline-block() {

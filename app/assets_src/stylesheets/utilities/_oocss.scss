@@ -30,6 +30,7 @@
 
 .adaptive {
   @include adaptive-images;
+  @include adaptive-canvas;
 }
 
 .v-adaptive {

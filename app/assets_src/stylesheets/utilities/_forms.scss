@@ -42,7 +42,7 @@ textarea {
 
 // Identify controls by their labels
 label {
-  display: inline-block;
+  display: block;
   margin-bottom: 5px; // MARK
   color: $labelColor;
 }
@@ -107,7 +107,7 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   background-color: $inputBackground;
-  border: $inputBorder;
+  border: $inputBorder; // WHYYY!!
   @include box-shadow($inputBoxShadow);
   @include transition($inputStateTransition);
 
@@ -304,7 +304,7 @@ textarea {
 // TODO v3: Convert .inline to .control-inline
 .radio.inline,
 .checkbox.inline {
-  display: inline-block;
+  // display: inline-block;
   padding-top: 5px;
   margin-bottom: 0;
   vertical-align: middle;
@@ -320,12 +320,12 @@ textarea {
 // -----------
 
 // General classes for quick sizes
-.input-mini       { width: 60px; }
+/*.input-mini       { width: 60px; }
 .input-small      { width: 90px; }
 .input-medium     { width: 150px; }
 .input-large      { width: 210px; }
 .input-xlarge     { width: 270px; }
-.input-xxlarge    { width: 530px; }
+.input-xxlarge    { width: 530px; }*/
 
 // Grid style input sizes
 input[class*="span"],

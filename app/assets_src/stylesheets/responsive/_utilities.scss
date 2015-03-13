@@ -2,16 +2,7 @@
 // Responsive: Utility classes
 // --------------------------------------------------
 
-
-// Accessible yet invisible text
-.hide-text {
-  @include hide-text();
-}
-
-// Uses box-sizing mixin, so must be defined here
-.input-block-level {
-  @include input-block-level();
-}
+// Visibility utilities
 
 // Hide from screenreaders and browsers
 .hidden {

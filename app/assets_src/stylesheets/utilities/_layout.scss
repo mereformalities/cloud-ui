@@ -1,5 +1,7 @@
 /* Layout Classes */
 
+.inline { display: inline-block; }
+
 .arr { font-size: 0.9em; line-height: 1.2em; vertical-align: top; }
 .clear { clear: both!important; float: none!important; }
 
@@ -34,7 +36,8 @@
 
 // Bootstrap - Container (centered, fixed-width layouts)
 .container {
-  @include container-fixed();
+  width: $containerWidth;
+  max-width: $containerMax;
   @extend .clearfix;
 }
 
@@ -42,5 +45,12 @@
 .container-fluid {
   padding-right: $gridGutterWidth;
   padding-left: $gridGutterWidth;
+  @extend .clearfix;
+}
+
+// Bootstrap - Centered container element
+.container-fixed {
+  margin-right: auto;
+  margin-left: auto;
   @extend .clearfix;
 }
