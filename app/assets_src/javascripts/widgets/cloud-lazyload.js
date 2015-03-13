@@ -65,7 +65,9 @@
 
 		// Fire one update per scroll event (not one per image)
 		if (0 === settings.event.indexOf('scroll')) {
+			// Setup scroll, slide handlers
 			$scroller.on(settings.event, updateHandler);
+			$scroller.on('slide', updateHandler);
 			// Clean up event handler (using jquery++)
 			$(this).on('destroyed', function () {
 				$scroller.off(settings.event, updateHandler);
