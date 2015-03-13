@@ -31,6 +31,22 @@
   @include user-select(text);
 }
 
+// http://nicolasgallagher.com/micro-clearfix-hack
+@mixin clearfix {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    line-height: 0; // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
 
 // IE7 likes to collapse whitespace on either side of the inline-block elements.
 // Ems because we're attempting to match the width of a space character. Left

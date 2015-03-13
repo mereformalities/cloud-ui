@@ -7,10 +7,6 @@
   ul, ol { @include structural-list; }
 }
 
-.clearfix {
-  @include clearfix;
-}
-
 .hide-text {
   @include hide-text;
 }

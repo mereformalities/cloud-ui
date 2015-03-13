@@ -132,17 +132,3 @@
   *display: inline; /* IE7 inline-block hack */
   *zoom: 1;
 }
-
-
-// Source: h5bp.com/q
-@mixin clearfix {
-  *zoom: 1;
-  &:before, &:after {
-    display: table;
-    content: "";
-    line-height: 0; 	// Fixes Opera/contenteditable bug:
-  }										// http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
-  &:after {
-    clear: both;
-  }
-}

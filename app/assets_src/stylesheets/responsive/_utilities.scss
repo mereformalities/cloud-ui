@@ -3,11 +3,6 @@
 // --------------------------------------------------
 
 
-// Clearing floats
-.clearfix {
-  @include clearfix();
-}
-
 // Accessible yet invisible text
 .hide-text {
   @include hide-text();

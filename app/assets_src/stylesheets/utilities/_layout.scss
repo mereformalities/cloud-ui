@@ -27,14 +27,20 @@
 	overflow: hidden;
 } 
 
+// Clearing floats
+.clearfix { @include clearfix(); }
+// Uses box-sizing mixin, so must be defined here
+.input-block-level { @include input-block-level(); }
+
 // Bootstrap - Container (centered, fixed-width layouts)
 .container {
   @include container-fixed();
+  @extend .clearfix;
 }
 
 // Bootstrap - Fluid layouts (left aligned, with sidebar, min- & max-width content)
 .container-fluid {
   padding-right: $gridGutterWidth;
   padding-left: $gridGutterWidth;
-  @include clearfix();
+  @extend .clearfix;
 }
