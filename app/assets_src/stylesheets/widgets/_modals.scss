@@ -87,7 +87,7 @@ $modal-padding-h: baseHeights(1.25) + 1px;
 }
 // Errors
 .modal-errors {
-  word-break: break-all;
+  // word-break: break-all;
   background-color: $errorBackground;
   padding: ($modal-padding-v * 0.75) $modal-padding-h;
   border-bottom: 1px solid $errorBorder;
@@ -95,7 +95,7 @@ $modal-padding-h: baseHeights(1.25) + 1px;
 }
 // Body 
 .modal-body {
-  word-break: break-all;
+  // word-break: break-all;
   overflow-y: auto;
   max-height: 480px;
   padding: $modal-padding-v $modal-padding-h;
