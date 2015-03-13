@@ -1,25 +1,78 @@
+
+// Assist images with no src attribute in Firefox
+img {
+  display: inline-block;
+}
+
 /* Adaptive Images */
 
-@mixin images-fill-height() {
+@mixin images-use-width() {
   img {
-    vertical-align: middle;
-    height: 100%;
-    width: auto;
+    // Make image inherently responsive by allowing
+    // them to scale to their full img tag width.
+    max-width: 100%;
+    height: auto;
   }
 }
 
 @mixin images-fill-width() {
   img {
-    max-width: 100%; // Make images inherently responsive
+    // Make images inherently responsive by having
+    // them to scale to fill their container's width.
+    // Stretches the image but maintains aspect ratio.
+    width: 100%;
+    height: auto;
+    // vertical-align: middle;
+  }
+}
+
+@mixin images-use-height() {
+  img {
+    width: auto;
+    // Make images inherently responsive by allowing
+    // them to scale to their full img tag height.
+    max-height: 100%;
+  }
+}
+
+@mixin images-fill-height() {
+  img {
+    width: auto;
+    // Make images inherently responsive by having
+    // them to scale to fill their container's height.
+    // Stretches the image but maintains aspect ratio.
+    height: 100%;
+    // text-align: center;
+  }
+}
+
+/* Adaptive Canvases */
+
+@mixin canvases-use-width() {
+  canvas {
+    // Make canvas inherently responsive by having
+    // it scale to fill the container's width.
+    max-width: 100%;
     height: auto;
   }
 }
 
-@mixin adaptive-images() {
-  @include images-fill-width;
+@mixin canvases-fill-width() {
+  canvas {
+    // Make canvas inherently responsive by having
+    // it scale to fill the container's width.
+    // Stretchs the canvas but maintains aspect ratio.
+    width: 100%;
+    height: auto;
+  }
 }
 
-// Assist images with no src attribute in Firefox
-img {
-  display: inline-block;
+/* Most Common Cases */
+
+@mixin adaptive-images() {
+  @include images-use-width;
+}
+
+@mixin adaptive-canvas() {
+  @include canvases-use-width;
 }
